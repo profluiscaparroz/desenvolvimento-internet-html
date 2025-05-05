@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Personalizado em Caixa</title>
+  <style>
+    /* Estilo para o corpo da página */
+    body {
+      font-family: Arial, sans-serif; /* Define a fonte padrão */
+      margin: 0; /* Remove margens padrão */
+      padding: 20px; /* Adiciona um espaçamento interno */
+    }
+
+    /* Estilo para a caixa interativa */
+    .caixa {
+      width: 300px; /* Largura fixa da caixa */
+      height: 200px; /* Altura fixa da caixa */
+      background-color: #f0f0f0; /* Cor de fundo cinza claro */
+      border: 2px dashed #999; /* Borda tracejada cinza */
+      display: flex; /* Usa flexbox para alinhar o conteúdo */
+      align-items: center; /* Alinha verticalmente ao centro */
+      justify-content: center; /* Alinha horizontalmente ao centro */
+      margin: 50px auto; /* Centraliza a caixa na página */
+      position: relative; /* Define o contexto de posicionamento para elementos filhos */
+    }
+
+    /* Estilo para o menu personalizado */
+    #custom-menu {
+      display: none; /* Inicialmente o menu está oculto */
+      position: absolute; /* Posicionamento absoluto em relação ao elemento pai */
+      background-color: #fff; /* Fundo branco */
+      border: 1px solid #ccc; /* Borda cinza clara */
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2); /* Sombra para dar destaque */
+      z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+      width: 200px; /* Largura fixa do menu */
+    }
+
+    /* Estilo para a lista do menu */
+    #custom-menu ul {
+      list-style: none; /* Remove os marcadores padrão da lista */
+      padding: 10px 0; /* Adiciona espaçamento interno */
+      margin: 0; /* Remove margens padrão */
+    }
+
+    /* Estilo para os itens da lista */
+    #custom-menu li {
+      padding: 8px 15px; /* Espaçamento interno dos itens */
+      cursor: pointer; /* Mostra o cursor de "mão" ao passar sobre os itens */
+    }
+
+    /* Estilo ao passar o mouse sobre os itens */
+    #custom-menu li:hover {
+      background-color: #eee; /* Altera o fundo para cinza claro */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Título e instruções -->
+  <h2>Caixa interativa</h2>
+  <p>Clique com o botão direito <strong>dentro da caixa</strong> abaixo para ver o menu personalizado.</p>
+
+  <!-- Caixa interativa onde o menu será exibido -->
+  <div class="caixa" id="caixa-direito">
+    Clique com o botão direito aqui
+  </div>
+
+  <!-- Menu personalizado -->
+  <div id="custom-menu">
+    <ul>
+      <!-- Itens do menu com ações ao clicar -->
+      <li onclick="alert('Opção 1')">🔧 Opção 1</li> <!-- Exibe um alerta ao clicar -->
+      <li onclick="alert('Opção 2')">📁 Opção 2</li> <!-- Exibe um alerta ao clicar -->
+      <li onclick="alert('Opção 3')">❌ Opção 3</li> <!-- Exibe um alerta ao clicar -->
+    </ul>
+  </div>
+
+  <script>
+    // Seleciona o menu e a caixa interativa
+    const menu = document.getElementById('custom-menu');
+    const caixa = document.getElementById('caixa-direito');
+
+    // Adiciona um evento de clique com o botão direito (contextmenu) na caixa
+    caixa.addEventListener('contextmenu', function (e) {
+      e.preventDefault(); // Impede o menu padrão do navegador
+
+      // Define a posição do menu com base na posição do clique
+      menu.style.top = e.pageY + 'px';
+      menu.style.left = e.pageX + 'px';
+      menu.style.display = 'block'; // Exibe o menu
+    });
+
+    // Adiciona um evento de clique no documento para fechar o menu
+    document.addEventListener('click', function () {
+      menu.style.display = 'none'; // Oculta o menu
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Personalizado</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #custom-menu {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+      width: 200px;
+    }
+
+    #custom-menu ul {
+      list-style: none;
+      padding: 10px 0;
+      margin: 0;
+    }
+
+    #custom-menu li {
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+
+    #custom-menu li:hover {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <p>Clique com o botão direito do mouse em qualquer lugar da página para ver o menu personalizado.</p>
+
+  <div id="custom-menu">
+    <ul>
+      <li onclick="alert('Opção 1 selecionada')">Opção 1</li>
+      <li onclick="alert('Opção 2 selecionada')">Opção 2</li>
+      <li onclick="alert('Opção 3 selecionada')">Opção 3</li>
+    </ul>
+  </div>
+
+  <script>
+    const menu = document.getElementById('custom-menu');
+
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault(); // impede o menu padrão do navegador
+
+      menu.style.top = e.pageY + 'px';
+      menu.style.left = e.pageX + 'px';
+      menu.style.display = 'block';
+    });
+
+    document.addEventListener('click', function () {
+      menu.style.display = 'none'; // esconde o menu ao clicar em qualquer lugar
+    });
+  </script>
+
+</body>
+</html>
