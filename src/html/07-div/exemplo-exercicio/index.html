@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Praticando Eventos com DOM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #mensagem {
+      margin-top: 10px;
+      font-size: 18px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bem-vindo(a)!</h1>
+
+  <!-- Entrada de nome -->
+  <label for="nome">Digite seu nome:</label>
+  <input type="text" id="nome">
+  <button id="btnSaudacao">Exibir saudação</button>
+
+  <!-- Parágrafo que será modificado -->
+  <p id="mensagem">Sua saudação aparecerá aqui...</p>
+
+  <!-- Botão para mudar a cor -->
+  <button id="btnCor">Mudar cor</button>
+
+  <hr>
+
+  <!-- Formulário -->
+  <form id="formulario">
+    <label for="email">Digite seu email:</label>
+    <input type="email" id="email" required>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+    // Elementos do DOM
+    const btnSaudacao = document.getElementById("btnSaudacao");
+    const btnCor = document.getElementById("btnCor");
+    const mensagem = document.getElementById("mensagem");
+    const inputNome = document.getElementById("nome");
+    const inputEmail = document.getElementById("email");
+    const formulario = document.getElementById("formulario");
+
+    // Evento de clique para exibir saudação
+    btnSaudacao.addEventListener("click", () => {
+      const nome = inputNome.value.trim();
+      if (nome === "") {
+        mensagem.innerText = "Por favor, digite seu nome.";
+      } else {
+        mensagem.innerText = `Olá, ${nome}! Seja bem-vindo(a)!`;
+      }
+    });
+
+    // Evento de clique para mudar a cor do parágrafo
+    btnCor.addEventListener("click", () => {
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      mensagem.style.color = `rgb(${r}, ${g}, ${b})`;
+    });
+
+    // Evento de envio do formulário
+    formulario.addEventListener("submit", (event) => {
+      event.preventDefault(); // Impede o recarregamento da página
+
+      const nome = inputNome.value.trim();
+      const email = inputEmail.value.trim();
+
+      if (nome === "" || email === "") {
+        alert("Por favor, preencha nome e email.");
+        return;
+      }
+
+      alert(`Obrigado, ${nome}. Recebemos seu email: ${email}`);
+    });
+  </script>
+
+</body>
+</html>
