@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Validação de Senha com FastAPI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f2f2f2;
+    }
+    form {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label, input {
+      display: block;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+    #mensagem {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    .erro {
+      color: red;
+    }
+    .sucesso {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="formLogin">
+    <h2>Login</h2>
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required>
+    <button type="submit">Entrar</button>
+    <p id="mensagem"></p>
+  </form>
+
+  <script>
+    const form = document.getElementById("formLogin");
+    const mensagem = document.getElementById("mensagem");
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      const resposta = await fetch("/validar", {
+        method: "POST",
+        body: formData
+      });
+
+      const resultado = await resposta.json();
+
+      if (resultado.valido) {
+        mensagem.textContent = "✅ Senha correta. Acesso permitido!";
+        mensagem.className = "sucesso";
+        // Redireciona para a página home.html após 1 segundo
+        setTimeout(() => {
+          window.location.href = "/home.html";
+        }, 1000);
+      } else {
+        mensagem.textContent = "❌ Senha incorreta. Tente novamente.";
+        mensagem.className = "erro";
+      }
+    });
+  </script>
+
+</body>
+</html>

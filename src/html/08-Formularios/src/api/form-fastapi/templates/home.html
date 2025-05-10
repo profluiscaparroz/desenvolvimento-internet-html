@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário GET/POST</title>
+</head>
+<body>
+  <h2>Digite seus dados:</h2>
+  <form method="post" action="/enviar">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required><br><br>
+
+    <label for="idade">Idade:</label>
+    <input type="number" id="idade" name="idade" required><br><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+    {% if mensagem %}
+        <p><strong>{{ mensagem }}</strong></p>
+    {% endif %}
+
+    <form id="formNumerosAntes">
+        <label for="valor">Digite um número:</label>
+        <input type="number" id="valor" name="valor" required><br><br>
+      
+        <button type="submit">Enviar</button>
+      </form>
+      
+      <script>
+        const formNumerosAntes = document.getElementById("formNumerosAntes");
+      
+        formNumerosAntes.addEventListener("submit", function (e) {
+          e.preventDefault(); // Impede o envio padrão do formulário
+      
+          const valor = document.getElementById("valor").value; // Obtém o valor do campo
+          if (valor) {
+            // Redireciona para o endpoint com o valor dinâmico
+            window.location.href = `/numeros-antes/${valor}`;
+          }
+        });
+      </script>
+
+  <!-- Exibe os números, caso estejam disponíveis -->
+  {% if numeros %}
+    <h3>Números antes do valor:</h3>
+    <ul>
+      {% for numero in numeros %}
+        <li>{{ numero }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>

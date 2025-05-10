@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Validação de Senha</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+    form {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label, input {
+      display: block;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+    #mensagem {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    .erro {
+      color: red;
+    }
+    .sucesso {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="formLogin">
+    <h2>Login</h2>
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required>
+    <button type="submit">Entrar</button>
+    <p id="mensagem"></p>
+  </form>
+
+  <script>
+    const form = document.getElementById("formLogin");
+    const mensagem = document.getElementById("mensagem");
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault(); // evita recarregar a página
+
+      const senha = document.getElementById("senha").value;
+
+      // Simulação de backend com validação
+      const resposta = await simularBackend(senha);
+
+      if (resposta.valido) {
+        mensagem.textContent = "✅ Senha correta. Acesso permitido!";
+        mensagem.className = "sucesso";
+      } else {
+        mensagem.textContent = "❌ Senha incorreta. Tente novamente.";
+        mensagem.className = "erro";
+      }
+    });
+
+    // Simulando um backend que valida senha "1234seguro"
+    async function simularBackend(senha) {
+      await new Promise(r => setTimeout(r, 500)); // simula tempo de resposta
+      return {
+        valido: senha === "1234seguro"
+      };
+    }
+  </script>
+
+</body>
+</html>
