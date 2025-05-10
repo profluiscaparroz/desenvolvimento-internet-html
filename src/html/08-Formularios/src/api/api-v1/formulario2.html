@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Enviar e Receber JSON com FastAPI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+    form {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+      max-width: 400px;
+    }
+    label {
+      display: block;
+      margin-bottom: 1rem;
+    }
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .resposta, .detalhes {
+      background: #eef;
+      padding: 1rem;
+      border-left: 4px solid #2196F3;
+      font-family: "Courier New", monospace;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+    .erro {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Formulário (via fetch + JSON)</h2>
+  <form id="meuForm">
+    <label>
+      Nome:
+      <input type="text" name="nome" required>
+    </label>
+    <label>
+      Idade:
+      <input type="number" name="idade" required>
+    </label>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <h3>Resposta formatada:</h3>
+  <div class="detalhes">
+    <p><strong>Mensagem:</strong> <span id="mensagemTexto">---</span></p>
+    <p><strong>Nome:</strong> <span id="nomeTexto">---</span></p>
+    <p><strong>Idade:</strong> <span id="idadeTexto">---</span></p>
+  </div>
+
+  <h3>JSON bruto:</h3>
+  <pre class="resposta" id="respostaJson">Aguardando envio...</pre>
+
+  <script>
+    const form = document.getElementById("meuForm");
+    const respostaDiv = document.getElementById("respostaJson");
+    const mensagemSpan = document.getElementById("mensagemTexto");
+    const nomeSpan = document.getElementById("nomeTexto");
+    const idadeSpan = document.getElementById("idadeTexto");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const nome = formData.get("nome");
+      const idade = formData.get("idade");
+
+      try {
+        const resposta = await fetch(`http://localhost:8000/receber?nome=${encodeURIComponent(nome)}&idade=${idade}`, {
+          method: "GET"
+        });
+
+        if (!resposta.ok) throw new Error("Erro na resposta do servidor");
+
+        const dados = await resposta.json();
+        respostaDiv.textContent = JSON.stringify(dados, null, 2);
+
+        // Atualiza os elementos individuais
+        mensagemSpan.textContent = dados.mensagem || "---";
+        nomeSpan.textContent = nome || "---";
+        idadeSpan.textContent = idade || "---";
+
+      } catch (erro) {
+        respostaDiv.textContent = "❌ Erro: " + erro.message;
+        respostaDiv.classList.add("erro");
+        mensagemSpan.textContent = "---";
+        nomeSpan.textContent = "---";
+        idadeSpan.textContent = "---";
+      }
+    });
+  </script>
+
+</body>
+</html>
