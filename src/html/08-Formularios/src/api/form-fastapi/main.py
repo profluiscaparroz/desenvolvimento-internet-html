@@ -8,11 +8,11 @@ app = FastAPI()  # Cria uma instância do aplicativo FastAPI
 templates = Jinja2Templates(directory="templates")  # Define o diretório onde os templates HTML estão localizados
 
 @app.get("/", response_class=HTMLResponse)  # Define uma rota GET para a raiz ("/") que retorna uma resposta HTML
-async def home(request: Request):  # Função assíncrona que lida com a requisição
+async def home(request: Request):  
     return templates.TemplateResponse("index.html", {"request": request})  # Renderiza o template "index.html" e passa o objeto request
 
 @app.get("/home.html", response_class=HTMLResponse)  # Define uma rota GET para "/home.html" que retorna uma resposta HTML
-async def home(request: Request):  # Função assíncrona que lida com a requisição
+async def home(request: Request):  
     return templates.TemplateResponse("home.html", {"request": request})  # Renderiza o template "home.html" e passa o objeto request
 
 @app.post("/validar", response_class=JSONResponse)  # Define uma rota POST para "/validar" que retorna uma resposta JSON
@@ -32,7 +32,7 @@ async def processar_formulario(request: Request, nome: str = Form(...), idade: i
 @app.post("/validar-entrada-por-idade", response_class=HTMLResponse)  # Define uma rota POST para "/validar-entrada-por-idade"
 async def validar_entrada_por_idade(request: Request, idade: int = Form(...)):  
     # Recebe o campo "idade" enviado via formulário
-    if idade < 18:  # Verifica se a idade é menor que 18
+    if idade < 18: 
         mensagem = "Você não tem idade suficiente para acessar esta página."  # Mensagem para menores de idade
     else:
         mensagem = "Você tem idade suficiente para acessar esta página."  # Mensagem para maiores de idade
