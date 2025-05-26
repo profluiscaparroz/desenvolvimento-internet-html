@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Simples de JavaScript</title>
+</head>
+<body>
+    <h1>Exemplo Simples de JavaScript</h1>
+    <p id="mensagem">Clique no botão para ver uma mensagem.</p>
+    <button onclick="mostrarMensagem()">Clique aqui</button>
+
+    <script>
+        function mostrarMensagem() {
+            document.getElementById('mensagem').innerText = 'Olá! Você clicou no botão.';
+        }
+    </script>
+</body>
+</html>

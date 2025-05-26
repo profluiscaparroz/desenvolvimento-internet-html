@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Raiz Quadrada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .output-box {
+            background-color: #e9e9e9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-height: 300px; /* Limita a altura para que não fique muito grande */
+            overflow-y: auto; /* Adiciona scroll se o conteúdo for muito grande */
+            border-radius: 4px;
+            margin-top: 15px;
+            font-family: 'Courier New', Courier, monospace; /* Fonte monoespaçada para os números */
+        }
+        .final-result {
+            font-weight: bold;
+            color: #28a745; /* Cor verde para o resultado final */
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculadora de Raiz Quadrada (Método Babilônico)</h1>
+
+        <p>A raiz quadrada será calculada para o valor: <span id="input-value"></span></p>
+
+        <h3>Passos da Iteração:</h3>
+        <div id="output-steps" class="output-box">
+            </div>
+
+        <p class="final-result">
+            <span id="final-result-text"></span>
+        </p>
+    </div>
+
+    <script>
+        // --- Configurações da função de cálculo ---
+        // A função agora aceita um elemento HTML para exibir os resultados
+        function calcularRaizQuadrada(x, stepsElement, finalResultElement) {
+            let a = 2; // Chute inicial
+            const epsilon = 0.00001; // Tolerância
+            let novoChute;
+
+            // Limpa o conteúdo anterior
+            stepsElement.innerHTML = '';
+            finalResultElement.innerHTML = '';
+
+            // Adiciona a mensagem inicial
+            stepsElement.innerHTML += `Calculando a raiz quadrada de ${x}...<br>`;
+
+            // Loop para as iterações
+            while (Math.abs(a * a - x) > epsilon) {
+                novoChute = (a + x / a) / 2.0;
+                stepsElement.innerHTML += `Novo chute: ${novoChute.toFixed(5)}<br>`; // Adiciona ao elemento HTML
+                a = novoChute;
+            }
+
+            // Exibe o resultado final no elemento HTML
+            finalResultElement.innerHTML = `A raiz quadrada aproximada de ${x.toFixed(2)} é ${a.toFixed(5)}`;
+            return a;
+        }
+
+        // --- Execução quando a página carregar ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const valorParaRaiz = 25; // Define o valor para o qual queremos a raiz quadrada
+
+            // Obtém os elementos HTML onde os resultados serão exibidos
+            const inputValueSpan = document.getElementById('input-value');
+            const outputStepsDiv = document.getElementById('output-steps');
+            const finalResultSpan = document.getElementById('final-result-text');
+
+            // Exibe o valor de entrada na página
+            inputValueSpan.textContent = valorParaRaiz;
+
+            // Chama a função de cálculo, passando os elementos HTML
+            calcularRaizQuadrada(valorParaRaiz, outputStepsDiv, finalResultSpan);
+        });
+    </script>
+
+</body>
+</html>

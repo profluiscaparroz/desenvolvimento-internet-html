@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tipos de Dados em JavaScript</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .output { background: #f5f5f5; padding: 10px; border-radius: 5px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Tipos de Dados em JavaScript</h1>
+  <p>Clique no botão abaixo para ver exemplos:</p>
+  <button onclick="mostrarTipos()">Mostrar Tipos</button>
+
+  <div class="output" id="saida"></div>
+
+  <script>
+    function mostrarTipos() {
+      let nome = "Maria";         // string
+      let idade = 20;             // number
+      let estudante = true;       // boolean
+      let nota = null;            // null
+      let curso;                  // undefined
+      let disciplinas = ["Algoritmos", "Matemática"];  // array
+      let aluno = { nome: "João", idade: 22 };          // objeto
+
+      let saida = `
+        <strong>String:</strong> ${nome} <br/>
+        <strong>Number:</strong> ${idade} <br/>
+        <strong>Boolean:</strong> ${estudante} <br/>
+        <strong>Null:</strong> ${nota} <br/>
+        <strong>Undefined:</strong> ${curso} <br/>
+        <strong>Array:</strong> ${disciplinas.join(", ")} <br/>
+        <strong>Objeto:</strong> nome = ${aluno.nome}, idade = ${aluno.idade}
+      `;
+
+      document.getElementById("saida").innerHTML = saida;
+    }
+  </script>
+</body>
+</html>

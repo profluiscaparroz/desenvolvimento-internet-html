@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Raiz Quadrada Interativa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Espaço entre label e input */
+        }
+        .input-group label {
+            min-width: 120px; /* Garante que os labels fiquem alinhados */
+        }
+        .input-group input[type="number"] {
+            flex-grow: 1; /* Faz o input ocupar o espaço restante */
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            display: block; /* Ocupa a largura total disponível */
+            width: 100%;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .output-box {
+            background-color: #e9e9e9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            border-radius: 4px;
+            margin-top: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .final-result {
+            font-weight: bold;
+            color: #28a745;
+            margin-top: 15px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculadora de Raiz Quadrada (Método Babilônico)</h1>
+
+        <div class="input-group">
+            <label for="inputValue">Valor para Raiz (x):</label>
+            <input type="number" id="inputValue" value="25" step="0.01">
+        </div>
+
+        <div class="input-group">
+            <label for="initialGuess">Chute Inicial (a):</label>
+            <input type="number" id="initialGuess" value="2" step="0.01">
+        </div>
+
+        <div class="input-group">
+            <label for="epsilonValue">Tolerância (ε):</label>
+            <input type="number" id="epsilonValue" value="0.00001" step="0.000001">
+        </div>
+
+        <button id="calculateButton">Calcular Raiz Quadrada</button>
+
+        <div id="errorMessage" class="error-message"></div>
+
+        <h3>Passos da Iteração:</h3>
+        <div id="output-steps" class="output-box">
+            </div>
+
+        <p class="final-result">
+            <span id="final-result-text"></span>
+        </p>
+    </div>
+
+    <script>
+        // --- Função de cálculo (agora pega os parâmetros diretamente) ---
+        function calcularRaizQuadrada(x, a, epsilon, stepsElement, finalResultElement, errorMessageElement) {
+            let novoChute;
+
+            // Limpa o conteúdo anterior
+            stepsElement.innerHTML = '';
+            finalResultElement.innerHTML = '';
+            errorMessageElement.innerHTML = ''; // Limpa mensagens de erro
+
+            // Validações básicas
+            if (isNaN(x) || isNaN(a) || isNaN(epsilon) || x < 0 || epsilon <= 0) {
+                errorMessageElement.innerHTML = "Por favor, insira valores numéricos válidos. 'x' deve ser >= 0 e 'ε' deve ser > 0.";
+                return; // Para a execução da função
+            }
+
+            // Adiciona a mensagem inicial
+            stepsElement.innerHTML += `Calculando a raiz quadrada de ${x.toFixed(2)} com chute inicial ${a.toFixed(2)} e tolerância ${epsilon.toFixed(6)}...<br><br>`;
+
+            // Loop para as iterações
+            let iterationCount = 0;
+            const maxIterations = 1000; // Limite para evitar loops infinitos em casos de entrada ruim
+
+            while (Math.abs(a * a - x) > epsilon && iterationCount < maxIterations) {
+                novoChute = (a + x / a) / 2.0;
+                stepsElement.innerHTML += `Novo chute (Iteração ${iterationCount + 1}): ${novoChute.toFixed(6)}<br>`;
+                a = novoChute;
+                iterationCount++;
+            }
+
+            if (iterationCount >= maxIterations) {
+                errorMessageElement.innerHTML = "O cálculo atingiu o limite de iterações. A convergência pode não ter sido alcançada ou os parâmetros iniciais são inadequados.";
+            }
+
+            // Exibe o resultado final no elemento HTML
+            finalResultElement.innerHTML = `A raiz quadrada aproximada de ${x.toFixed(2)} é ${a.toFixed(6)}`;
+            return a;
+        }
+
+        // --- Execução quando a página carregar ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Obtém referências aos elementos HTML
+            const inputValue = document.getElementById('inputValue');
+            const initialGuess = document.getElementById('initialGuess');
+            const epsilonValue = document.getElementById('epsilonValue');
+            const calculateButton = document.getElementById('calculateButton');
+            const outputStepsDiv = document.getElementById('output-steps');
+            const finalResultSpan = document.getElementById('final-result-text');
+            const errorMessageDiv = document.getElementById('errorMessage');
+
+            // Adiciona um "ouvinte de evento" ao botão
+            calculateButton.addEventListener('click', () => {
+                // Converte os valores dos inputs para números
+                // parseFloat() é usado para garantir que valores como "0.00001" sejam lidos corretamente.
+                const x = parseFloat(inputValue.value);
+                const a = parseFloat(initialGuess.value);
+                const epsilon = parseFloat(epsilonValue.value);
+
+                // Chama a função de cálculo com os valores lidos e os elementos de saída
+                calcularRaizQuadrada(x, a, epsilon, outputStepsDiv, finalResultSpan, errorMessageDiv);
+            });
+
+            // Opcional: Adicionar um cálculo inicial ao carregar a página
+            // Isso preenche os campos com valores padrão e executa o cálculo uma vez.
+            calculateButton.click();
+        });
+    </script>
+
+</body>
+</html>
