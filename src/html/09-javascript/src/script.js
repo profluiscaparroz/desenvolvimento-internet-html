@@ -23,4 +23,4 @@ const valorParaRaiz = 25; // O valor para o qual queremos a raiz quadrada
 calcularRaizQuadrada(valorParaRaiz);
 
 console.log("\n--- Outro exemplo ---");
-calcularRaizQuadrada(121); // Raiz quadrada de 121 é 11
+calcularRaizQuadrada(121); 
