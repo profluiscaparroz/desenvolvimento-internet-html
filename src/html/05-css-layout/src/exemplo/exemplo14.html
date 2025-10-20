@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo Flex Grow</title>
+<style>
+.container {
+  display: flex;
+  border: 2px dashed #ccc;
+  padding: 10px;
+  height: 100px;
+}
+
+.item {
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  line-height: 80px;
+  margin: 5px;
+  height: 80px;
+}
+
+/* flex-grow diferente para cada item */
+.item1 { flex-grow: 1; }
+.item2 { flex-grow: 2; }
+.item3 { flex-grow: 3; }
+</style>
+</head>
+<body>
+
+<h1>Exemplo de Flex Grow</h1>
+
+<div class="container">
+  <div class="item item1">1</div>
+  <div class="item item2">2</div>
+  <div class="item item3">3</div>
+</div>
+
+<p>
+O item 1 cresce 1 parte, o item 2 cresce 2 partes, e o item 3 cresce 3 partes do espaço disponível.
+</p>
+
+</body>
+</html>

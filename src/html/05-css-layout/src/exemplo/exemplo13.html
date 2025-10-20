@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo Flexbox Completo</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+/* Itens flex básicos */
+.item {
+  width: 60px;
+  height: 60px;
+  background-color: #3498db;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  font-weight: bold;
+}
+
+/* Contêiner geral */
+.container {
+  display: flex;
+  border: 2px dashed #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  height: 120px;
+  flex-wrap: wrap; /* permite quebrar linha se necessário */
+}
+
+/* =====================
+   flex-direction
+===================== */
+.row { flex-direction: row; }
+.row-reverse { flex-direction: row-reverse; }
+.column { flex-direction: column; }
+.column-reverse { flex-direction: column-reverse; }
+
+/* =====================
+   justify-content
+===================== */
+.justify-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+
+/* =====================
+   align-items
+===================== */
+.align-start { align-items: flex-start; }
+.align-center { align-items: center; }
+.align-end { align-items: flex-end; }
+.align-stretch { align-items: stretch; }
+
+/* Ajustes visuais para align-stretch */
+.align-stretch .item {
+  height: auto;
+  padding: 20px 0;
+}
+</style>
+</head>
+<body>
+
+<h1>Exemplo Flexbox - Todas Propriedades</h1>
+
+<h2>Flex Direction</h2>
+<div class="container row">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+<div class="container row-reverse">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+<div class="container column">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+<div class="container column-reverse">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+
+<h2>Justify Content</h2>
+<div class="container justify-start">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+<div class="container justify-center">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+<div class="container justify-end">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+<div class="container justify-between">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+<div class="container justify-around">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+
+<h2>Align Items</h2>
+<div class="container align-start" style="height:150px;">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+<div class="container align-center" style="height:150px;">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+<div class="container align-end" style="height:150px;">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+<div class="container align-stretch" style="height:150px;">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+
+</body>
+</html>
