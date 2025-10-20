@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo Position Static</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  .caixa {
+    width: 150px;
+    height: 80px;
+    margin: 10px;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    top: 30px;   /* move 30px para baixo */
+    left: 50px;  /* move 50px para a direita */
+  }
+
+  /* position padrão (static) */
+  .static {
+    position: static; /* na prática, é o default */
+  }
+</style>
+</head>
+<body>
+
+<h1>Position: Static</h1>
+
+<div class="caixa static">Caixa 1</div>
+<div class="caixa static">Caixa 2</div>
+<div class="caixa static">Caixa 3</div>
+
+<p>
+Todas as caixas seguem o **fluxo normal da página**, uma abaixo da outra.  
+O `position: static` **não permite mover** o elemento com `top`, `left`, `bottom` ou `right`.
+</p>
+
+</body>
+</html>

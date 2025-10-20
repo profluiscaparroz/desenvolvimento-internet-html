@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo Position Absolute</title>
+<style>
+  /* Contêiner pai posicionado */
+  .container {
+    position: relative;   /* define o contexto para o absolute */
+    width: 300px;
+    height: 200px;
+    background-color: #ecf0f1;
+    border: 2px solid #2c3e50;
+    margin: 50px;
+  }
+
+  /* Caixa absoluta */
+  .caixa {
+    position: absolute;   /* retira do fluxo normal */
+    top: 10%;            /* distância do topo do contêiner pai */
+    left: 30px;           /* distância da esquerda do contêiner pai */
+    width: 100px;
+    height: 50px;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+  }
+
+  /* Outra caixa absoluta */
+  .caixa2 {
+    position: absolute;
+    bottom: 10px;        /* distância do fundo do contêiner */
+    right: 15px;         /* distância da direita */
+    width: 80px;
+    height: 40px;
+    background-color: #e74c3c;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Exemplo de Position Absolute</h1>
+
+<div class="container">
+  <div class="caixa">Caixa 1</div>
+  <div class="caixa2">Caixa 2</div>
+</div>
+
+<p>Note que as caixas estão <strong>fora do fluxo normal</strong> da página e 
+posicionadas em relação ao contêiner pai.
+</p>
+
+</body>
+</html>

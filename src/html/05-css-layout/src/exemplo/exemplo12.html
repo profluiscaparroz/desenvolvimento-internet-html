@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo Position Sticky</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    height: 400px;
+    border: 2px solid #ccc;
+    margin: 20px;
+    padding: 10px;
+    overflow: auto;
+  }
+
+  .sticky {
+    position: sticky;
+    top: 0; /* distância do topo em que a div “gruda” */
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .content {
+    height: 600px; /* conteúdo grande para permitir rolagem */
+    background: linear-gradient(to bottom, #f7f7f7, #e2e2e2);
+    margin-top: 10px;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Exemplo de Sticky</h1>
+
+<div class="container">
+  <div class="sticky">Eu fico “grudado” no topo!</div>
+  <div class="content">
+    Role para baixo e veja como a barra azul permanece visível enquanto o restante do conteúdo rola.
+  </div>
+</div>
+
+<p>
+O sticky funciona quando o elemento atinge o valor definido em `top`, misturando comportamento de `relative` (antes de grudar) e `fixed` (quando gruda).
+</p>
+
+</body>
+</html>

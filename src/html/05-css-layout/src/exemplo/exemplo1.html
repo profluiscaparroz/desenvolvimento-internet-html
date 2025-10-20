@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao Box Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f7f7f7;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        p {
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .caixa {
+            background-color: #4a90e2;
+            color: white;
+            padding: 20px;
+            border: 5px solid #2c3e50;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Por que precisamos do Box Model?</h1>
+
+    <p>
+        Quando criamos uma página web, cada elemento — como um parágrafo, imagem ou botão —
+        é tratado como uma <strong>caixa</strong>.  
+        Essa caixa tem um conteúdo, pode ter uma borda, um espaço interno (padding)
+        e um espaço externo (margin).  
+    </p>
+
+    <p>
+        O <strong>Box Model</strong> é o que permite ao navegador calcular o espaço
+        que cada elemento ocupa na tela.  
+        Sem ele, seria impossível alinhar, espaçar ou organizar visualmente os componentes
+        de forma previsível.
+    </p>
+
+    <div class="caixa">
+        Eu sou uma caixa com <strong>padding</strong>, <strong>border</strong> e <strong>margin</strong>.<br>
+        Observe como o espaço ao redor e dentro de mim muda o layout.
+    </div>
+
+    <p>
+        Dominar o Box Model ajuda o desenvolvedor a:
+        <ul>
+            <li>Controlar melhor o layout e o espaçamento entre elementos;</li>
+            <li>Evitar que partes do site “quebrem” quando o tamanho muda;</li>
+            <li>Criar páginas mais organizadas e visualmente agradáveis.</li>
+        </ul>
+    </p>
+
+</body>
+</html>

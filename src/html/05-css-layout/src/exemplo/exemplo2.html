@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evolução do Box Model</title>
+<style>
+    /* Layout básico da página */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: #f7f7f7;
+    }
+
+    h1 {
+        color: #2c3e50;
+    }
+
+    /* Primeira caixa: sem padding, sem border, sem margin */
+    .caixa1 {
+        background: #4a90e2;
+        color: white;
+        width: 200px;
+    }
+
+    /* Segunda caixa: adicionando padding (espaço interno) */
+    .caixa2 {
+        background: #4a90e2;
+        color: white;
+        width: 200px;
+        padding: 20px; /* agora o conteúdo “respira” melhor */
+    }
+
+    /* Terceira caixa: adicionando borda */
+    .caixa3 {
+        background: #4a90e2;
+        color: white;
+        width: 200px;
+        padding: 20px;
+        border: 5px solid #2c3e50; /* borda adicionada */
+    }
+
+    /* Quarta caixa: adicionando margem externa */
+    .caixa4 {
+        background: #4a90e2;
+        color: white;
+        width: 300px;
+        padding: 50px;
+        border: 5px solid #2c3e50;
+        margin: 20px;  
+    }
+</style>
+</head>
+<body>
+
+<h1>Evolução do Box Model</h1>
+
+<!-- O professor pode mostrar a diferença entre as caixas -->
+<!-- Cada caixa representa uma etapa do Box Model -->
+
+<div class="caixa1">Etapa 1: Só o conteúdo</div>
+<div class="caixa2">Etapa 2: + Padding</div>
+<div class="caixa3">Etapa 3: + Border</div>
+<div class="caixa4">Etapa 4: + Margin</div>
+
+<p>
+    <!-- Pequena conclusão -->
+    🔹 O Box Model evolui de dentro para fora: 
+    <strong>content → padding → border → margin</strong>.
+</p>
+
+</body>
+</html>

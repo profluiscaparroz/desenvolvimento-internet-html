@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cálculo do Box Model - content-box</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f7f7f7;
+  }
+
+  h1 {
+    color: #2c3e50;
+  }
+
+  /* Caixa com modelo padrão: content-box */
+  .caixa {
+    box-sizing: content-box; /* padrão do CSS */
+    width: 200px;            /* apenas o conteúdo */
+    padding: 20px;           /* espaço interno */
+    border: 5px solid #2c3e50; /* borda */
+    margin: 15px;            /* espaço externo */
+    background-color: #4a90e2;
+    color: white;
+  }
+
+  .info {
+    background: #fff;
+    border-left: 4px solid #4a90e2;
+    padding: 10px 15px;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Cálculo do tamanho - content-box</h1>
+
+<div class="caixa">
+  <strong>Caixa Azul</strong><br>
+  (modelo padrão)
+</div>
+
+<div class="info">
+  <p><strong>Propriedades:</strong></p>
+  <ul>
+    <li>width = 200px</li>
+    <li>padding = 20px (em cada lado)</li>
+    <li>border = 5px (em cada lado)</li>
+    <li>margin = 15px (em cada lado)</li>
+  </ul>
+
+  <p><strong>Cálculo da largura total:</strong></p>
+  <pre>200 (conteúdo)
++ 20 + 20 (padding)
++ 5 + 5   (bordas)
++ 15 + 15 (margens)
+= <strong>280px de largura total</strong></pre>
+
+  <p><strong>Cálculo da altura:</strong> funciona da mesma forma.</p>
+</div>
+
+</body>
+</html>

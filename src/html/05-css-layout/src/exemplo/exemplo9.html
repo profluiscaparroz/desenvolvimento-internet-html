@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo Relative</title>
+<style>
+  .caixa {
+    width: 150px;
+    height: 100px;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    margin: 20px;
+    position: relative; /* elemento posicionado relativamente */
+    top: 30px;   /* move 30px para baixo */
+    left: 100px;  /* move 50px para a direita */
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Exemplo de position: relative</h1>
+
+<div class="caixa">
+  Caixa Relativa
+</div>
+
+<p>
+A caixa foi movida 30px para baixo e 50px para a direita.  
+Ela ainda **ocupa o espaço original** na página, diferente do absolute.
+</p>
+
+</body>
+</html>

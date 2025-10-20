@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bordas em cada lado</title>
+<style>
+  .caixa {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #f39c12;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+  }
+
+  /* Borda superior */
+  .top {
+    border-top: 5px solid #e74c3c;
+  }
+
+  /* Borda direita */
+  .right {
+    border-right: 5px solid #2ecc71;
+  }
+
+  /* Borda inferior */
+  .bottom {
+    border-bottom: 5px solid #3498db;
+  }
+
+  /* Borda esquerda */
+  .left {
+    border-left: 5px solid #9b59b6;
+  }
+</style>
+</head>
+<body>
+
+<h1>Bordas individuais</h1>
+
+<div class="caixa top">Borda Top</div>
+<div class="caixa right">Borda Right</div>
+<div class="caixa bottom">Borda Bottom</div>
+<div class="caixa left">Borda Left</div>
+
+<p>
+Cada `<div>` tem apenas **uma borda visível Isso ajuda a entender como cada lado da caixa é controlado individualmente.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .box-model-container {
+            width: 600px;
+            margin: 30px auto;
+        }
+        
+        .box-example {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 2px solid #333;
+            margin-bottom: 30px;
+        }
+        
+        .demonstration {
+            width: 300px;
+            margin: 40px auto;
+            position: relative;
+        }
+        
+        .margin {
+            background-color: #ffdddd;
+            padding: 30px;
+        }
+        
+        .border {
+            background-color: #ddffdd;
+            padding: 20px;
+        }
+        
+        .padding {
+            background-color: #ddddff;
+            padding: 20px;
+        }
+        
+        .content {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .label {
+            position: absolute;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .margin-label {
+            top: 10px;
+            left: 10px;
+        }
+        
+        .border-label {
+            top: 40px;
+            left: 40px;
+        }
+        
+        .padding-label {
+            top: 70px;
+            left: 70px;
+        }
+        
+        .content-label {
+            top: 100px;
+            left: 130px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Entendendo o CSS Box Model</h1>
+    
+    <div class="box-model-container">
+        <div class="box-example">
+            <h2>O que é o Box Model?</h2>
+            <p>No CSS, o "Box Model" é um conceito fundamental que define como os elementos HTML são renderizados. Cada elemento é representado como uma caixa retangular que consiste em:</p>
+            
+            <ul>
+                <li><strong>Conteúdo (Content)</strong>: A área onde o texto e imagens aparecem</li>
+                <li><strong>Preenchimento (Padding)</strong>: O espaço entre o conteúdo e a borda</li>
+                <li><strong>Borda (Border)</strong>: Uma linha que envolve o padding e o conteúdo</li>
+                <li><strong>Margem (Margin)</strong>: O espaço transparente fora da borda</li>
+            </ul>
+        </div>
+        
+        <div class="demonstration">
+            <div class="margin">
+                <span class="label margin-label">Margin</span>
+                <div class="border">
+                    <span class="label border-label">Border</span>
+                    <div class="padding">
+                        <span class="label padding-label">Padding</span>
+                        <div class="content">
+                            <span class="label content-label">Content</span>
+                            Conteúdo
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="box-example">
+            <h2>Como calcular o tamanho total:</h2>
+            <p>Largura total = width + padding-left + padding-right + border-left + border-right + margin-left + margin-right</p>
+            <p>Altura total = height + padding-top + padding-bottom + border-top + border-bottom + margin-top + margin-bottom</p>
+        </div>
+    </div>
+</body>
+</html>
