@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendizado Progressivo - CSS Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .intro {
+            background: #e0e7ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            margin-bottom: 2rem;
+        }
+        
+        .intro h2 {
+            color: #4c51bf;
+            margin-bottom: 1rem;
+        }
+        
+        .steps {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .step-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .step-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+            background: #e0e7ff;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            float: left;
+        }
+        
+        .step-content {
+            overflow: hidden;
+        }
+        
+        .step-title {
+            color: #2d3748;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .step-description {
+            color: #4a5568;
+            line-height: 1.8;
+        }
+        
+        .step-tags {
+            margin-top: 0.8rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            background: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #667eea;
+            border: 1px solid #667eea;
+        }
+        
+        .step-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .step-card a:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+        
+        .tips {
+            background: #fef3c7;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #f59e0b;
+            margin-top: 2rem;
+        }
+        
+        .tips h3 {
+            color: #92400e;
+            margin-bottom: 1rem;
+        }
+        
+        .tips ul {
+            margin-left: 1.5rem;
+            color: #78350f;
+            line-height: 2;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .back-link a {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #2d3748;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link a:hover {
+            background: #1a202c;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            
+            .container {
+                padding: 2rem 1rem;
+                border-radius: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .step-card {
+                padding: 1rem;
+            }
+            
+            .step-number {
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                font-size: 1rem;
+            }
+            
+            .step-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Aprendizado Progressivo de CSS Layout</h1>
+        <p class="subtitle">Do básico ao avançado: Flexbox e CSS Grid passo a passo</p>
+        
+        <div class="intro">
+            <h2>📚 Sobre Esta Série</h2>
+            <p>Esta série de exemplos progressivos foi criada para ensinar CSS Layout de forma incremental. 
+            Cada passo adiciona novos conceitos sobre o anterior, permitindo que você veja a evolução 
+            do layout básico até um design profissional completo.</p>
+            <p style="margin-top: 1rem;"><strong>Recomendação:</strong> Siga os passos em ordem para melhor compreensão!</p>
+        </div>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress" style="width: 0%"></div>
+        </div>
+        
+        <div class="steps">
+            <div class="step-card" data-progress="0">
+                <div class="step-number">0</div>
+                <div class="step-content">
+                    <h3 class="step-title">🔨 Layout Seco (Sem CSS)</h3>
+                    <p class="step-description">
+                        Comece aqui para entender como o HTML se comporta sem nenhum sistema de layout. 
+                        Veja os elementos no fluxo normal do documento.
+                    </p>
+                    <div class="step-tags">
+                        <span class="tag">HTML Básico</span>
+                        <span class="tag">Fluxo Normal</span>
+                        <span class="tag">Elementos de Bloco</span>
+                    </div>
+                    <a href="00-layout-seco.html">Iniciar Passo 0 →</a>
+                </div>
+            </div>
+            
+            <div class="step-card" data-progress="14">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3 class="step-title">✨ Flexbox Básico</h3>
+                    <p class="step-description">
+                        Aprenda os fundamentos do Flexbox aplicando display: flex no header e navegação. 
+                        Veja como os elementos se organizam horizontalmente!
+                    </p>
+                    <div class="step-tags">
+                        <span class="tag">display: flex</span>
+                        <span class="tag">justify-content</span>
+                        <span class="tag">align-items</span>
+                        <span class="tag">gap</span>
+                    </div>
+                    <a href="01-flexbox-basico.html">Ver Passo 1 →</a>
+                </div>
+            </div>
+            
+            <div class="step-card" data-progress="28">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3 class="step-title">🎯 Flexbox para Alinhamento</h3>
+                    <p class="step-description">
+                        Use Flexbox para criar layouts de duas colunas e centralizar elementos. 
+                        Aprenda sobre flex-grow, flex-shrink e flex-basis.
+                    </p>
+                    <div class="step-tags">
+                        <span class="tag">flex: 1</span>
+                        <span class="tag">flex-direction</span>
+                        <span class="tag">Duas Colunas</span>
+                        <span class="tag">Centralização</span>
+                    </div>
+                    <a href="02-flexbox-alinhamento.html">Ver Passo 2 →</a>
+                </div>
+            </div>
+            
+            <div class="step-card" data-progress="42">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3 class="step-title">🔲 CSS Grid Básico</h3>
+                    <p class="step-description">
+                        Introdução ao CSS Grid! Crie layouts bidimensionais com controle total sobre 
+                        linhas e colunas. Veja a diferença entre Flexbox e Grid.
+                    </p>
+                    <div class="step-tags">
+                        <span class="tag">display: grid</span>
+                        <span class="tag">grid-template-columns</span>
+                        <span class="tag">grid-template-rows</span>
+                        <span class="tag">Unidade fr</span>
+                    </div>
+                    <a href="03-grid-basico.html">Ver Passo 3 →</a>
+                </div>
+            </div>
+            
+            <div class="step-card" data-progress="57">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3 class="step-title">🎨 Grid Template Areas</h3>
+                    <p class="step-description">
+                        Simplifique seu código com grid-template-areas! Crie layouts nomeados de forma 
+                        visual e intuitiva. O código reflete o design!
+                    </p>
+                    <div class="step-tags">
+                        <span class="tag">grid-template-areas</span>
+                        <span class="tag">grid-area</span>
+                        <span class="tag">Layout Semântico</span>
+                        <span class="tag">Visual</span>
+                    </div>
+                    <a href="04-grid-areas.html">Ver Passo 4 →</a>
+                </div>
+            </div>
+            
+            <div class="step-card" data-progress="71">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3 class="step-title">📱 Design Responsivo</h3>
+                    <p class="step-description">
+                        Torne seu layout responsivo com media queries! Reorganize o grid para diferentes 
+                        tamanhos de tela (desktop, tablet, mobile).
+                    </p>
+                    <div class="step-tags">
+                        <span class="tag">@media queries</span>
+                        <span class="tag">Mobile-First</span>
+                        <span class="tag">Breakpoints</span>
+                        <span class="tag">Adaptativo</span>
+                    </div>
+                    <a href="05-responsivo.html">Ver Passo 5 →</a>
+                </div>
+            </div>
+            
+            <div class="step-card" data-progress="100">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h3 class="step-title">🎉 Layout Profissional Completo</h3>
+                    <p class="step-description">
+                        Veja tudo junto! Layout profissional combinando Grid e Flexbox de forma inteligente. 
+                        Todos os conceitos aprendidos aplicados em um design moderno.
+                    </p>
+                    <div class="step-tags">
+                        <span class="tag">Grid + Flexbox</span>
+                        <span class="tag">Profissional</span>
+                        <span class="tag">Responsivo</span>
+                        <span class="tag">Completo</span>
+                    </div>
+                    <a href="06-completo.html">Ver Passo 6 →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tips">
+            <h3>💡 Dicas de Estudo</h3>
+            <ul>
+                <li><strong>Siga em Ordem:</strong> Cada passo constrói sobre o anterior</li>
+                <li><strong>Compare o Código:</strong> Veja o que mudou entre cada passo</li>
+                <li><strong>Experimente:</strong> Abra o DevTools (F12) e modifique o CSS</li>
+                <li><strong>Teste Responsividade:</strong> Redimensione o navegador em cada exemplo</li>
+                <li><strong>Pratique:</strong> Tente recriar os exemplos do zero</li>
+                <li><strong>Consulte o README:</strong> Teoria completa disponível na documentação</li>
+            </ul>
+        </div>
+        
+        <div class="back-link">
+            <a href="../index.html">⬅️ Voltar ao Módulo Principal</a>
+        </div>
+    </div>
+    
+    <script>
+        // Anima a barra de progresso quando os cards são clicados
+        document.querySelectorAll('.step-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const progress = this.getAttribute('data-progress');
+                document.getElementById('progress').style.width = progress + '%';
+            });
+        });
+        
+        // Reseta ao sair
+        document.querySelector('.steps').addEventListener('mouseleave', function() {
+            document.getElementById('progress').style.width = '0%';
+        });
+        
+        // Mostra progresso total ao passar sobre a barra
+        document.querySelector('.progress-bar').addEventListener('mouseenter', function() {
+            document.getElementById('progress').style.width = '100%';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passo 4 - Grid Areas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* ================================
+           GRID COM ÁREAS NOMEADAS
+        ================================ */
+        
+        .page-container {
+            display: grid;
+            min-height: 100vh;
+            
+            grid-template-columns: 200px 1fr 200px;
+            grid-template-rows: auto 1fr auto;
+            
+            /* ✨ GRID AREAS - Visual e intuitivo! */
+            grid-template-areas:
+                "header  header  header"
+                "nav     main    aside"
+                "footer  footer  footer";
+            
+            gap: 0.5rem;
+            padding: 0.5rem;
+        }
+        
+        /* Posicionando elementos nas áreas nomeadas */
+        header { grid-area: header; }
+        nav    { grid-area: nav; }
+        main   { grid-area: main; }
+        aside  { grid-area: aside; }
+        footer { grid-area: footer; }
+        
+        /* Estilos visuais */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #667eea;
+            color: white;
+            padding: 1.5rem 2rem;
+            border: 3px solid #4c51bf;
+        }
+        
+        header h1 {
+            font-size: 1.8rem;
+        }
+        
+        nav {
+            background: #f0f0f0;
+            padding: 1rem;
+            border: 2px solid #333;
+        }
+        
+        nav h2 {
+            margin-bottom: 1rem;
+        }
+        
+        nav ul {
+            list-style: none;
+        }
+        
+        nav li {
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            background: #e0e7ff;
+            border-left: 3px solid #667eea;
+            cursor: pointer;
+        }
+        
+        nav li:hover {
+            background: #c7d2fe;
+            border-left-color: #4c51bf;
+        }
+        
+        main {
+            background: #fafafa;
+            border: 2px solid #333;
+            padding: 1.5rem;
+        }
+        
+        aside {
+            background: #f5f5f5;
+            border: 2px solid #333;
+            padding: 1rem;
+        }
+        
+        footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #2d3748;
+            color: white;
+            padding: 2rem;
+            border: 2px solid #1a202c;
+        }
+        
+        .info-box {
+            background: #dbeafe;
+            padding: 1rem;
+            margin: 1rem;
+            border: 2px solid #3b82f6;
+            border-radius: 5px;
+            grid-area: header;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box h2 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight {
+            background: #fef3c7;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .nav-link:hover {
+            background: #555;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #c7254e;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        
+        .visual-grid {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            line-height: 1.8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div style="background: #dbeafe; padding: 1rem; margin: 0.5rem; border: 2px solid #3b82f6; border-radius: 5px;">
+        <h2 style="color: #1e40af; margin-bottom: 0.5rem;">🎨 Passo 4: Grid Template Areas</h2>
+        <p><strong>O que mudou:</strong> Usamos <code>grid-template-areas</code> para nomear as áreas do grid de forma visual e intuitiva! 
+        Muito mais fácil de entender e manter.</p>
+        <p><strong>Vantagem:</strong> O código CSS reflete visualmente o layout!</p>
+        <div style="margin-top: 1rem;">
+            <a href="03-grid-basico.html" class="nav-link">⬅️ Anterior: Grid Básico</a>
+            <a href="05-responsivo.html" class="nav-link">➡️ Próximo: Design Responsivo</a>
+            <a href="../index.html" class="nav-link">🏠 Índice</a>
+        </div>
+    </div>
+
+    <div class="page-container">
+        <header>
+            <div>
+                <h1>🏛️ Cabeçalho do Site</h1>
+                <p>Grid Areas em ação!</p>
+            </div>
+            <div style="text-align: right;">
+                <p>👤 Usuário</p>
+                <p style="font-size: 0.9rem;">Login</p>
+            </div>
+        </header>
+
+        <nav>
+            <h2>📋 Navegação</h2>
+            <ul>
+                <li>Home</li>
+                <li>Sobre</li>
+                <li>Serviços</li>
+                <li>Portfólio</li>
+                <li>Contato</li>
+            </ul>
+        </nav>
+
+        <main>
+            <h2>📄 Grid Template Areas</h2>
+            <p>Esta é a forma mais intuitiva de criar layouts com CSS Grid! 
+            Você nomeia as áreas e depois posiciona os elementos nessas áreas.</p>
+            
+            <h3>🎯 O Código CSS com Grid Areas:</h3>
+            <div class="code-block">
+.page-container {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr auto;
+    
+    /* ✨ Áreas nomeadas - Visual! */
+    grid-template-areas:
+        "header  header  header"
+        "nav     main    aside"
+        "footer  footer  footer";
+}
+
+/* Posicionando elementos */
+header { grid-area: header; }
+nav    { grid-area: nav; }
+main   { grid-area: main; }
+aside  { grid-area: aside; }
+footer { grid-area: footer; }
+            </div>
+            
+            <h3>📐 Visualização das Áreas:</h3>
+            <div class="visual-grid">
+┌─────────────────────────────────┐
+│         header header header    │ ← Ocupa 3 colunas
+├─────────┬───────────┬───────────┤
+│   nav   │    main   │   aside   │ ← Cada um em 1 coluna
+├─────────┴───────────┴───────────┤
+│         footer footer footer    │ ← Ocupa 3 colunas
+└─────────────────────────────────┘
+            </div>
+            
+            <h3>🌟 Vantagens do Grid Areas:</h3>
+            <ul>
+                <li>✅ <strong>Visual:</strong> O código CSS "desenha" o layout</li>
+                <li>✅ <strong>Intuitivo:</strong> Fácil de entender e manter</li>
+                <li>✅ <strong>Flexível:</strong> Fácil reorganizar em diferentes telas</li>
+                <li>✅ <strong>Semântico:</strong> Nomes descritivos (header, main, etc)</li>
+            </ul>
+            
+            <h3>🔄 Comparação: Grid Column vs Grid Areas</h3>
+            <div class="code-block">
+/* Método 1: Com grid-column (menos intuitivo) */
+header {
+    grid-column: 1 / -1;  /* O que isso significa? */
+    grid-row: 1;
+}
+
+/* Método 2: Com grid-area (mais claro!) */
+header {
+    grid-area: header;  /* Claro e descritivo! */
+}
+            </div>
+            
+            <h3>💡 Dica Profissional:</h3>
+            <p>Use Grid Areas sempre que possível! É mais fácil de ler, entender e manter. 
+            Outros desenvolvedores (ou você mesmo no futuro) vão agradecer!</p>
+        </main>
+
+        <aside>
+            <h2>📌 Widgets</h2>
+            <p>Esta aside está posicionada automaticamente na área "aside" do grid!</p>
+            <ul style="margin-top: 1rem;">
+                <li style="margin: 0.5rem 0;">📊 Widget 1</li>
+                <li style="margin: 0.5rem 0;">📈 Widget 2</li>
+                <li style="margin: 0.5rem 0;">📉 Widget 3</li>
+                <li style="margin: 0.5rem 0;">🎯 Widget 4</li>
+            </ul>
+        </aside>
+
+        <footer>
+            <h2>🔻 Rodapé</h2>
+            <p>&copy; 2024 - CSS Grid Areas</p>
+        </footer>
+    </div>
+    
+    <div style="background: #dbeafe; padding: 1rem; margin: 0.5rem; border: 2px solid #3b82f6; border-radius: 5px;">
+        <h2 style="color: #1e40af; margin-bottom: 0.5rem;">📚 O Que Você Aprendeu</h2>
+        <ul>
+            <li>✅ Nomear áreas do grid com <code>grid-template-areas</code></li>
+            <li>✅ Posicionar elementos com <code>grid-area</code></li>
+            <li>✅ Criar layouts visuais e intuitivos</li>
+            <li>✅ Código mais legível e manutenível</li>
+        </ul>
+        <p><strong>Próximo passo: Vamos tornar tudo responsivo!</strong></p>
+    </div>
+</body>
+</html>

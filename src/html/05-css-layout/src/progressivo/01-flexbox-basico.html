@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passo 1 - Flexbox Básico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* ================================
+           FLEXBOX APLICADO NO HEADER
+        ================================ */
+        
+        header {
+            /* ✨ FLEXBOX ATIVADO! */
+            display: flex;
+            justify-content: space-between;  /* Distribui espaço entre elementos */
+            align-items: center;              /* Alinha verticalmente ao centro */
+            
+            background: #667eea;
+            color: white;
+            padding: 1.5rem 2rem;
+            border: 3px solid #4c51bf;
+        }
+        
+        header h1 {
+            font-size: 1.8rem;
+        }
+        
+        /* Navegação também usa Flexbox */
+        nav {
+            background: #f0f0f0;
+            padding: 1rem 2rem;
+            border: 2px solid #333;
+            margin: 0.5rem;
+        }
+        
+        nav ul {
+            /* ✨ FLEXBOX na lista de navegação! */
+            display: flex;
+            gap: 2rem;              /* Espaçamento entre itens */
+            list-style: none;
+        }
+        
+        nav li {
+            padding: 0.5rem 1rem;
+            background: #667eea;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        nav li:hover {
+            background: #5a67d8;
+        }
+        
+        /* Outros elementos permanecem sem Flexbox por enquanto */
+        main, aside, footer {
+            border: 2px solid #333;
+            padding: 1rem;
+            margin: 0.5rem;
+        }
+        
+        main {
+            background: #fafafa;
+        }
+        
+        aside {
+            background: #f5f5f5;
+        }
+        
+        footer {
+            background: #e8e8e8;
+        }
+        
+        .info-box {
+            background: #d4edda;
+            padding: 1rem;
+            margin: 1rem;
+            border: 2px solid #28a745;
+            border-radius: 5px;
+        }
+        
+        .info-box h2 {
+            color: #155724;
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .nav-link:hover {
+            background: #555;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #c7254e;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="info-box">
+        <h2>✨ Passo 1: Flexbox Básico</h2>
+        <p><strong>O que mudou:</strong> Aplicamos <code>display: flex</code> no header e na navegação. 
+        Observe como os elementos agora ficam organizados horizontalmente!</p>
+        <p><strong>Propriedades usadas:</strong></p>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+            <li><span class="highlight">display: flex</span> - Ativa o Flexbox</li>
+            <li><span class="highlight">justify-content: space-between</span> - Distribui espaço horizontalmente</li>
+            <li><span class="highlight">align-items: center</span> - Alinha verticalmente ao centro</li>
+            <li><span class="highlight">gap: 2rem</span> - Espaçamento entre itens</li>
+        </ul>
+        <div style="margin-top: 1rem;">
+            <a href="00-layout-seco.html" class="nav-link">⬅️ Anterior: Layout Seco</a>
+            <a href="02-flexbox-alinhamento.html" class="nav-link">➡️ Próximo: Flexbox Alinhamento</a>
+            <a href="../index.html" class="nav-link">🏠 Índice</a>
+        </div>
+    </div>
+
+    <header>
+        <div>
+            <h1>🏛️ Cabeçalho do Site</h1>
+            <p>Logo e informações</p>
+        </div>
+        <div style="text-align: right;">
+            <p>👤 Usuário</p>
+            <p style="font-size: 0.9rem;">Login</p>
+        </div>
+    </header>
+
+    <nav>
+        <h2 style="margin-bottom: 1rem;">📋 Navegação (agora horizontal!)</h2>
+        <ul>
+            <li>Home</li>
+            <li>Sobre</li>
+            <li>Serviços</li>
+            <li>Contato</li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>📄 Conteúdo Principal</h2>
+        <p>Observe como o header agora tem elementos alinhados horizontalmente! 
+        O logo à esquerda e as informações do usuário à direita.</p>
+        
+        <h3>O Código CSS Aplicado:</h3>
+        <div class="code-block">
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+        </div>
+        
+        <h3>Por Que Isso Funciona:</h3>
+        <ul>
+            <li><strong>display: flex</strong> - Transforma o container em flex container</li>
+            <li><strong>justify-content: space-between</strong> - Logo vai para esquerda, usuário para direita</li>
+            <li><strong>align-items: center</strong> - Alinha tudo verticalmente ao centro</li>
+            <li><strong>gap</strong> - Espaçamento uniforme entre itens de navegação</li>
+        </ul>
+    </main>
+
+    <aside>
+        <h2>📌 Barra Lateral</h2>
+        <p>Esta ainda está sem layout especial. Vamos organizar tudo melhor no próximo passo!</p>
+        <ul>
+            <li>Link 1</li>
+            <li>Link 2</li>
+            <li>Link 3</li>
+        </ul>
+    </aside>
+
+    <footer>
+        <h2>🔻 Rodapé</h2>
+        <p>&copy; 2024 - Curso de CSS Layout</p>
+    </footer>
+
+    <div class="info-box">
+        <h2>📚 O Que Você Aprendeu</h2>
+        <ul>
+            <li>✅ Como ativar Flexbox com <code>display: flex</code></li>
+            <li>✅ Distribuir elementos horizontalmente com <code>justify-content</code></li>
+            <li>✅ Alinhar verticalmente com <code>align-items</code></li>
+            <li>✅ Usar <code>gap</code> para espaçamento uniforme</li>
+        </ul>
+        <p><strong>Próximo passo: Vamos aprender mais sobre alinhamento!</strong></p>
+    </div>
+</body>
+</html>

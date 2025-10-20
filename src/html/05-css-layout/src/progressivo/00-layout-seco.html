@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Seco - Sem CSS</title>
+    <style>
+        /* Apenas reset básico - sem layout CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Estilos mínimos apenas para visualização */
+        header, nav, main, aside, footer {
+            border: 2px solid #333;
+            padding: 1rem;
+            margin: 0.5rem;
+        }
+        
+        header {
+            background: #e0e0e0;
+        }
+        
+        nav {
+            background: #f0f0f0;
+        }
+        
+        main {
+            background: #fafafa;
+        }
+        
+        aside {
+            background: #f5f5f5;
+        }
+        
+        footer {
+            background: #e8e8e8;
+        }
+        
+        .info-box {
+            background: #fffacd;
+            padding: 1rem;
+            margin: 1rem;
+            border: 2px solid #f0e68c;
+            border-radius: 5px;
+        }
+        
+        .info-box h2 {
+            color: #8b7500;
+            margin-bottom: 0.5rem;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .nav-link:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="info-box">
+        <h2>🔨 Passo 0: Layout Seco (Sem CSS de Layout)</h2>
+        <p><strong>O que você está vendo:</strong> Este é o HTML puro com elementos estruturais básicos. 
+        Observe que os elementos aparecem um embaixo do outro (comportamento padrão de elementos de bloco) 
+        e não há nenhum sistema de layout aplicado - nem Flexbox, nem Grid.</p>
+        <p><strong>Próximo passo:</strong> Vamos adicionar Flexbox para criar nosso primeiro layout organizado!</p>
+        <div style="margin-top: 1rem;">
+            <a href="01-flexbox-basico.html" class="nav-link">➡️ Próximo: Flexbox Básico</a>
+            <a href="../index.html" class="nav-link">🏠 Voltar ao Índice</a>
+        </div>
+    </div>
+
+    <header>
+        <h1>🏛️ Cabeçalho do Site</h1>
+        <p>Logo e informações do site</p>
+    </header>
+
+    <nav>
+        <h2>📋 Navegação</h2>
+        <ul>
+            <li>Home</li>
+            <li>Sobre</li>
+            <li>Serviços</li>
+            <li>Contato</li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>📄 Conteúdo Principal</h2>
+        <p>Este é o conteúdo principal da página. Aqui vai todo o texto, imagens e informações relevantes.</p>
+        <p>Observe que sem CSS de layout (Flexbox ou Grid), todos os elementos aparecem em sequência vertical, 
+        seguindo o fluxo normal do documento HTML.</p>
+        
+        <h3>Problemas do Layout sem CSS:</h3>
+        <ul>
+            <li>Elementos sempre um embaixo do outro</li>
+            <li>Difícil criar layouts em colunas</li>
+            <li>Impossível alinhar elementos lado a lado facilmente</li>
+            <li>Não responsivo automaticamente</li>
+        </ul>
+    </main>
+
+    <aside>
+        <h2>📌 Barra Lateral</h2>
+        <p>Informações complementares, links, widgets, etc.</p>
+        <ul>
+            <li>Link 1</li>
+            <li>Link 2</li>
+            <li>Link 3</li>
+        </ul>
+    </aside>
+
+    <footer>
+        <h2>🔻 Rodapé</h2>
+        <p>&copy; 2024 - Curso de CSS Layout. Todos os direitos reservados.</p>
+        <p>Contato: email@exemplo.com</p>
+    </footer>
+
+    <div class="info-box">
+        <h2>📚 O Que Você Aprendeu</h2>
+        <ul>
+            <li>✅ Estrutura HTML básica com elementos semânticos</li>
+            <li>✅ Como os elementos se comportam sem CSS de layout</li>
+            <li>✅ O fluxo normal do documento (tudo em coluna)</li>
+        </ul>
+        <p><strong>Agora vamos aprender como melhorar isso com Flexbox!</strong></p>
+    </div>
+</body>
+</html>
