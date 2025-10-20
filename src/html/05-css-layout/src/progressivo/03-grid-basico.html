@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passo 3 - CSS Grid Básico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* ================================
+           LAYOUT COMPLETO COM CSS GRID
+        ================================ */
+        
+        .page-container {
+            /* ✨ CSS GRID ATIVADO! */
+            display: grid;
+            min-height: 100vh;
+            
+            /* Definindo 3 colunas: sidebar, main, aside */
+            grid-template-columns: 200px 1fr 200px;
+            
+            /* Definindo 3 linhas: header, conteúdo, footer */
+            grid-template-rows: auto 1fr auto;
+            
+            gap: 0.5rem;
+            padding: 0.5rem;
+        }
+        
+        /* Header com Flexbox (pode combinar!) */
+        header {
+            /* Ocupa as 3 colunas */
+            grid-column: 1 / -1;
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #667eea;
+            color: white;
+            padding: 1.5rem 2rem;
+            border: 3px solid #4c51bf;
+        }
+        
+        header h1 {
+            font-size: 1.8rem;
+        }
+        
+        /* Navegação */
+        nav {
+            background: #f0f0f0;
+            padding: 1rem;
+            border: 2px solid #333;
+        }
+        
+        nav h2 {
+            margin-bottom: 1rem;
+        }
+        
+        nav ul {
+            list-style: none;
+        }
+        
+        nav li {
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            background: #e0e7ff;
+            border-left: 3px solid #667eea;
+            cursor: pointer;
+        }
+        
+        nav li:hover {
+            background: #c7d2fe;
+            border-left-color: #4c51bf;
+        }
+        
+        /* Conteúdo Principal */
+        main {
+            background: #fafafa;
+            border: 2px solid #333;
+            padding: 1.5rem;
+        }
+        
+        /* Barra Lateral */
+        aside {
+            background: #f5f5f5;
+            border: 2px solid #333;
+            padding: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            /* Ocupa as 3 colunas */
+            grid-column: 1 / -1;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #2d3748;
+            color: white;
+            padding: 2rem;
+            border: 2px solid #1a202c;
+        }
+        
+        .info-box {
+            background: #dbeafe;
+            padding: 1rem;
+            margin: 1rem;
+            border: 2px solid #3b82f6;
+            border-radius: 5px;
+            grid-column: 1 / -1;
+        }
+        
+        .info-box h2 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight {
+            background: #fef3c7;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .nav-link:hover {
+            background: #555;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #c7254e;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+        
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .grid-cell {
+            background: #e0e7ff;
+            padding: 1.5rem;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .grid-cell.header-demo { background: #667eea; color: white; grid-column: 1 / -1; }
+        .grid-cell.footer-demo { background: #2d3748; color: white; grid-column: 1 / -1; }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="info-box">
+            <h2>🔲 Passo 3: CSS Grid Básico</h2>
+            <p><strong>O que mudou:</strong> Agora usamos CSS Grid para criar o layout completo da página! 
+            Grid é perfeito para layouts bidimensionais (linhas E colunas).</p>
+            <p><strong>Propriedades do Grid:</strong></p>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li><span class="highlight">display: grid</span> - Ativa o CSS Grid</li>
+                <li><span class="highlight">grid-template-columns: 200px 1fr 200px</span> - Define 3 colunas</li>
+                <li><span class="highlight">grid-template-rows: auto 1fr auto</span> - Define 3 linhas</li>
+                <li><span class="highlight">grid-column: 1 / -1</span> - Elemento ocupa todas as colunas</li>
+            </ul>
+            <div style="margin-top: 1rem;">
+                <a href="02-flexbox-alinhamento.html" class="nav-link">⬅️ Anterior: Flexbox Alinhamento</a>
+                <a href="04-grid-areas.html" class="nav-link">➡️ Próximo: Grid Areas</a>
+                <a href="../index.html" class="nav-link">🏠 Índice</a>
+            </div>
+        </div>
+
+        <header>
+            <div>
+                <h1>🏛️ Cabeçalho do Site</h1>
+                <p>Logo e informações</p>
+            </div>
+            <div style="text-align: right;">
+                <p>👤 Usuário</p>
+                <p style="font-size: 0.9rem;">Login</p>
+            </div>
+        </header>
+
+        <nav>
+            <h2>📋 Navegação</h2>
+            <ul>
+                <li>Home</li>
+                <li>Sobre</li>
+                <li>Serviços</li>
+                <li>Portfólio</li>
+                <li>Contato</li>
+            </ul>
+        </nav>
+
+        <main>
+            <h2>📄 Conteúdo Principal</h2>
+            <p>Agora estamos usando CSS Grid! Observe que todo o layout é controlado pelo grid do container pai.</p>
+            
+            <h3>O Código CSS do Grid:</h3>
+            <div class="code-block">
+.page-container {
+    display: grid;
+    min-height: 100vh;
+    
+    /* 3 colunas: 200px | flexível | 200px */
+    grid-template-columns: 200px 1fr 200px;
+    
+    /* 3 linhas: auto | flexível | auto */
+    grid-template-rows: auto 1fr auto;
+    
+    gap: 0.5rem;
+}
+            </div>
+            
+            <h3>Visualização do Grid:</h3>
+            <div class="grid-demo">
+                <div class="grid-cell header-demo">Header (3 colunas)</div>
+                <div class="grid-cell">Nav<br>200px</div>
+                <div class="grid-cell">Main<br>1fr (cresce)</div>
+                <div class="grid-cell">Aside<br>200px</div>
+                <div class="grid-cell footer-demo">Footer (3 colunas)</div>
+            </div>
+            
+            <h3>Fazendo Header e Footer Ocuparem 3 Colunas:</h3>
+            <div class="code-block">
+header {
+    grid-column: 1 / -1;  /* Coluna 1 até a última (-1) */
+}
+
+footer {
+    grid-column: 1 / -1;  /* Mesma coisa */
+}
+            </div>
+            
+            <h3>Por Que Usar Grid Aqui?</h3>
+            <ul>
+                <li>✅ Controle preciso de colunas e linhas</li>
+                <li>✅ Layout bidimensional (linhas E colunas)</li>
+                <li>✅ Fácil fazer elementos ocuparem múltiplas células</li>
+                <li>✅ Código mais limpo e intuitivo</li>
+            </ul>
+        </main>
+
+        <aside>
+            <h2>📌 Barra Lateral</h2>
+            <p>Estou na terceira coluna do grid com 200px de largura!</p>
+            <ul style="margin-top: 1rem;">
+                <li style="margin: 0.5rem 0;">📊 Widget 1</li>
+                <li style="margin: 0.5rem 0;">📈 Widget 2</li>
+                <li style="margin: 0.5rem 0;">📉 Widget 3</li>
+            </ul>
+        </aside>
+
+        <footer>
+            <h2>🔻 Rodapé</h2>
+            <p>&copy; 2024 - Curso de CSS Layout com Grid</p>
+        </footer>
+
+        <div class="info-box">
+            <h2>📚 O Que Você Aprendeu</h2>
+            <ul>
+                <li>✅ Criar layouts bidimensionais com <code>display: grid</code></li>
+                <li>✅ Definir colunas com <code>grid-template-columns</code></li>
+                <li>✅ Definir linhas com <code>grid-template-rows</code></li>
+                <li>✅ Fazer elementos ocuparem múltiplas colunas com <code>grid-column</code></li>
+                <li>✅ Usar unidade <code>fr</code> para espaço flexível</li>
+            </ul>
+            <p><strong>Próximo passo: Vamos simplificar ainda mais com Grid Areas!</strong></p>
+        </div>
+    </div>
+</body>
+</html>

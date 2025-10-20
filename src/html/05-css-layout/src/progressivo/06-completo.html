@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passo 6 - Layout Completo e Profissional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #f5f7fa;
+        }
+        
+        /* ================================
+           GRID + FLEXBOX COMBINADOS
+        ================================ */
+        
+        .page-container {
+            display: grid;
+            min-height: 100vh;
+            
+            grid-template-columns: 250px 1fr 220px;
+            grid-template-rows: auto auto 1fr auto;
+            
+            grid-template-areas:
+                "header  header  header"
+                "navbar  navbar  navbar"
+                "sidebar main    aside"
+                "footer  footer  footer";
+            
+            gap: 0.5rem;
+            padding: 0.5rem;
+        }
+        
+        /* Posicionando elementos */
+        header  { grid-area: header; }
+        .navbar { grid-area: navbar; }
+        nav     { grid-area: sidebar; }
+        main    { grid-area: main; }
+        aside   { grid-area: aside; }
+        footer  { grid-area: footer; }
+        
+        /* ===== HEADER COM FLEXBOX ===== */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 1.8rem;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        /* ===== NAVBAR HORIZONTAL COM FLEXBOX ===== */
+        .navbar {
+            display: flex;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            overflow-x: auto;
+        }
+        
+        .navbar a {
+            padding: 0.8rem 1.5rem;
+            background: #f8f9fa;
+            color: #333;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .navbar a:hover, .navbar a.active {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* ===== SIDEBAR ===== */
+        nav {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        nav h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        nav ul {
+            list-style: none;
+        }
+        
+        nav li {
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            background: #f8f9fa;
+            border-left: 3px solid #667eea;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        nav li:hover {
+            background: #e0e7ff;
+            transform: translateX(5px);
+        }
+        
+        /* ===== MAIN CONTENT ===== */
+        main {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        main h2 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .card {
+            display: flex;
+            flex-direction: column;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+        
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* ===== ASIDE ===== */
+        aside {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .widget {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .widget h3 {
+            color: #667eea;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+        
+        /* ===== FOOTER COM FLEXBOX ===== */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            background: #2d3748;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #cbd5e0;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        /* ===== INFO BOX ===== */
+        .info-box {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 2px solid #10b981;
+            border-radius: 10px;
+            grid-column: 1 / -1;
+        }
+        
+        .info-box h2 {
+            color: #065f46;
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #065f46;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background: #047857;
+        }
+        
+        /* ===== RESPONSIVIDADE ===== */
+        
+        @media (max-width: 1024px) {
+            .page-container {
+                grid-template-columns: 200px 1fr 180px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-container {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "header"
+                    "navbar"
+                    "main"
+                    "sidebar"
+                    "aside"
+                    "footer";
+            }
+            
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .navbar {
+                justify-content: center;
+            }
+            
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-container {
+                padding: 0.25rem;
+                gap: 0.25rem;
+            }
+            
+            header, .navbar, nav, main, aside, footer {
+                padding: 1rem;
+            }
+            
+            header h1 {
+                font-size: 1.3rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="info-box">
+            <h2>🎉 Passo 6: Layout Completo e Profissional</h2>
+            <p><strong>Parabéns!</strong> Este é um layout profissional completo combinando CSS Grid para estrutura geral 
+            e Flexbox para componentes individuais. Todos os conceitos aprendidos estão aqui!</p>
+            <div style="margin-top: 1rem;">
+                <a href="05-responsivo.html" class="nav-link">⬅️ Anterior: Responsivo</a>
+                <a href="00-layout-seco.html" class="nav-link">🔄 Recomeçar</a>
+                <a href="../index.html" class="nav-link">🏠 Índice</a>
+            </div>
+        </div>
+        
+        <header>
+            <div>
+                <h1>🏛️ Site Profissional</h1>
+                <p>Grid + Flexbox combinados</p>
+            </div>
+            <div class="user-info">
+                <span>👤 João Silva</span>
+                <button style="padding: 0.5rem 1rem; background: white; color: #667eea; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Sair</button>
+            </div>
+        </header>
+        
+        <div class="navbar">
+            <a href="#" class="active">🏠 Home</a>
+            <a href="#">📄 Sobre</a>
+            <a href="#">💼 Serviços</a>
+            <a href="#">📊 Portfolio</a>
+            <a href="#">📰 Blog</a>
+            <a href="#">📞 Contato</a>
+        </div>
+        
+        <nav>
+            <h2>📋 Menu Lateral</h2>
+            <ul>
+                <li>🎯 Dashboard</li>
+                <li>📈 Estatísticas</li>
+                <li>👥 Usuários</li>
+                <li>⚙️ Configurações</li>
+                <li>🔔 Notificações</li>
+                <li>📝 Relatórios</li>
+            </ul>
+        </nav>
+        
+        <main>
+            <h2>📄 Conteúdo Principal</h2>
+            <p>Este layout profissional combina o melhor de Grid e Flexbox:</p>
+            
+            <div class="content-grid">
+                <div class="card">
+                    <h3>🔲 CSS Grid</h3>
+                    <p>Usado para o layout geral da página (estrutura bidimensional)</p>
+                </div>
+                
+                <div class="card">
+                    <h3>📐 Flexbox</h3>
+                    <p>Usado para componentes individuais (header, navbar, cards)</p>
+                </div>
+                
+                <div class="card">
+                    <h3>📱 Responsivo</h3>
+                    <p>Media queries reorganizam o layout em diferentes telas</p>
+                </div>
+            </div>
+            
+            <h3>🌟 Conceitos Aplicados:</h3>
+            <ul style="margin: 1rem 0; line-height: 2;">
+                <li>✅ <strong>Grid Template Areas:</strong> Layout semântico e visual</li>
+                <li>✅ <strong>Flexbox para Alinhamento:</strong> Header e footer bem organizados</li>
+                <li>✅ <strong>Grid Responsivo:</strong> Auto-fit e minmax para cards</li>
+                <li>✅ <strong>Media Queries:</strong> Adaptação mobile, tablet e desktop</li>
+                <li>✅ <strong>Combinação Inteligente:</strong> Grid para layout, Flex para componentes</li>
+            </ul>
+            
+            <h3>💡 Aplicações no Mundo Real:</h3>
+            <ul style="margin: 1rem 0; line-height: 2;">
+                <li>🌐 <strong>Sites Corporativos:</strong> Layout profissional e organizado</li>
+                <li>📊 <strong>Dashboards:</strong> Múltiplas seções e widgets</li>
+                <li>🛒 <strong>E-commerce:</strong> Produtos em grade responsiva</li>
+                <li>📱 <strong>Apps Web:</strong> Interface responsiva e moderna</li>
+                <li>📝 <strong>Blogs:</strong> Layout de artigos com sidebar</li>
+            </ul>
+            
+            <div style="background: #fffacd; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #f59e0b; margin-top: 2rem;">
+                <h3 style="color: #92400e; margin-bottom: 0.5rem;">🎓 Você Dominou CSS Layout!</h3>
+                <p>Agora você sabe criar layouts modernos e profissionais! Continue praticando e 
+                experimente criar seus próprios designs.</p>
+            </div>
+        </main>
+        
+        <aside>
+            <div class="widget">
+                <h3>📊 Estatísticas</h3>
+                <p>Visitantes hoje: <strong>1,234</strong></p>
+                <p>Total páginas: <strong>45</strong></p>
+                <p>Membros: <strong>890</strong></p>
+            </div>
+            
+            <div class="widget">
+                <h3>🔥 Populares</h3>
+                <ul style="list-style: none;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">Flexbox Guide</li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">Grid Tutorial</li>
+                    <li style="padding: 0.5rem 0;">CSS Tips</li>
+                </ul>
+            </div>
+            
+            <div class="widget">
+                <h3>📌 Links Úteis</h3>
+                <ul style="list-style: none;">
+                    <li style="margin: 0.5rem 0;">📚 Documentação</li>
+                    <li style="margin: 0.5rem 0;">💬 Comunidade</li>
+                    <li style="margin: 0.5rem 0;">🎮 Exercícios</li>
+                </ul>
+            </div>
+        </aside>
+        
+        <footer>
+            <div>
+                <p>&copy; 2024 - Curso CSS Layout Completo</p>
+                <p style="font-size: 0.9rem; opacity: 0.8;">Todos os direitos reservados</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Sobre</a>
+                <a href="#">Termos</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Contato</a>
+                <a href="#">Ajuda</a>
+            </div>
+        </footer>
+        
+        <div class="info-box">
+            <h2>🎯 Resumo da Jornada</h2>
+            <ul>
+                <li>✅ <strong>Passo 0:</strong> HTML sem layout CSS</li>
+                <li>✅ <strong>Passo 1:</strong> Flexbox básico aplicado</li>
+                <li>✅ <strong>Passo 2:</strong> Flexbox para alinhamento e colunas</li>
+                <li>✅ <strong>Passo 3:</strong> CSS Grid básico introduzido</li>
+                <li>✅ <strong>Passo 4:</strong> Grid Areas nomeadas</li>
+                <li>✅ <strong>Passo 5:</strong> Design responsivo com media queries</li>
+                <li>✅ <strong>Passo 6:</strong> Layout profissional completo!</li>
+            </ul>
+            <p style="margin-top: 1rem;"><strong>🚀 Continue praticando e criando layouts incríveis!</strong></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passo 2 - Flexbox Alinhamento</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Header com Flexbox */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #667eea;
+            color: white;
+            padding: 1.5rem 2rem;
+            border: 3px solid #4c51bf;
+        }
+        
+        header h1 {
+            font-size: 1.8rem;
+        }
+        
+        /* Navegação com Flexbox */
+        nav {
+            background: #f0f0f0;
+            padding: 1rem 2rem;
+            border: 2px solid #333;
+            margin: 0.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        nav li {
+            padding: 0.5rem 1rem;
+            background: #667eea;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        nav li:hover {
+            background: #5a67d8;
+        }
+        
+        /* ================================
+           CONTAINER DE CONTEÚDO COM FLEXBOX
+        ================================ */
+        
+        .content-container {
+            /* ✨ FLEXBOX para organizar main e aside lado a lado! */
+            display: flex;
+            gap: 1rem;
+            margin: 0.5rem;
+        }
+        
+        main {
+            /* Cresce para ocupar espaço disponível */
+            flex: 1;
+            background: #fafafa;
+            border: 2px solid #333;
+            padding: 1rem;
+        }
+        
+        aside {
+            /* Largura fixa */
+            flex: 0 0 250px;
+            background: #f5f5f5;
+            border: 2px solid #333;
+            padding: 1rem;
+        }
+        
+        /* Footer com Flexbox para centralizar */
+        footer {
+            display: flex;
+            flex-direction: column;  /* Coluna vertical */
+            align-items: center;      /* Centraliza horizontalmente */
+            justify-content: center;  /* Centraliza verticalmente */
+            background: #2d3748;
+            color: white;
+            padding: 2rem;
+            margin: 0.5rem;
+            border: 2px solid #1a202c;
+            min-height: 120px;
+        }
+        
+        .info-box {
+            background: #d4edda;
+            padding: 1rem;
+            margin: 1rem;
+            border: 2px solid #28a745;
+            border-radius: 5px;
+        }
+        
+        .info-box h2 {
+            color: #155724;
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .nav-link:hover {
+            background: #555;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #c7254e;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+        
+        .demo-boxes {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .demo-box {
+            flex: 1;
+            background: #e0e7ff;
+            padding: 1rem;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="info-box">
+        <h2>🎯 Passo 2: Flexbox para Alinhamento e Layout</h2>
+        <p><strong>O que mudou:</strong> Agora usamos Flexbox para criar um layout de duas colunas 
+        (main e aside lado a lado) e centralizamos o conteúdo do footer!</p>
+        <p><strong>Novas propriedades:</strong></p>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+            <li><span class="highlight">flex: 1</span> - Elemento cresce para ocupar espaço disponível</li>
+            <li><span class="highlight">flex: 0 0 250px</span> - Largura fixa de 250px, não cresce nem encolhe</li>
+            <li><span class="highlight">flex-direction: column</span> - Organiza itens em coluna vertical</li>
+        </ul>
+        <div style="margin-top: 1rem;">
+            <a href="01-flexbox-basico.html" class="nav-link">⬅️ Anterior: Flexbox Básico</a>
+            <a href="03-grid-basico.html" class="nav-link">➡️ Próximo: CSS Grid</a>
+            <a href="../index.html" class="nav-link">🏠 Índice</a>
+        </div>
+    </div>
+
+    <header>
+        <div>
+            <h1>🏛️ Cabeçalho do Site</h1>
+            <p>Logo e informações</p>
+        </div>
+        <div style="text-align: right;">
+            <p>👤 Usuário</p>
+            <p style="font-size: 0.9rem;">Login</p>
+        </div>
+    </header>
+
+    <nav>
+        <h2 style="margin-bottom: 1rem;">📋 Navegação</h2>
+        <ul>
+            <li>Home</li>
+            <li>Sobre</li>
+            <li>Serviços</li>
+            <li>Contato</li>
+        </ul>
+    </nav>
+
+    <!-- Container com Flexbox para organizar main e aside -->
+    <div class="content-container">
+        <main>
+            <h2>📄 Conteúdo Principal</h2>
+            <p>Agora o conteúdo principal e a barra lateral estão lado a lado! 
+            Isso foi feito com Flexbox aplicado ao container pai.</p>
+            
+            <h3>O Código CSS Aplicado:</h3>
+            <div class="code-block">
+.content-container {
+    display: flex;
+    gap: 1rem;
+}
+
+main {
+    flex: 1;  /* Ocupa todo o espaço disponível */
+}
+
+aside {
+    flex: 0 0 250px;  /* Largura fixa de 250px */
+}
+            </div>
+            
+            <h3>Entendendo flex: 1 vs flex: 0 0 250px</h3>
+            <div class="demo-boxes">
+                <div class="demo-box">
+                    <strong>flex: 1</strong>
+                    <p>Cresce para ocupar espaço disponível</p>
+                </div>
+                <div class="demo-box" style="flex: 0 0 200px;">
+                    <strong>flex: 0 0 200px</strong>
+                    <p>Largura fixa (este box)</p>
+                </div>
+            </div>
+            
+            <h3>Footer Centralizado:</h3>
+            <div class="code-block">
+footer {
+    display: flex;
+    flex-direction: column;  /* Itens em coluna */
+    align-items: center;      /* Centraliza horizontalmente */
+    justify-content: center;  /* Centraliza verticalmente */
+}
+            </div>
+        </main>
+
+        <aside>
+            <h2>📌 Barra Lateral</h2>
+            <p>Agora estou ao lado do conteúdo principal com largura fixa de 250px!</p>
+            <ul style="margin-top: 1rem;">
+                <li style="margin: 0.5rem 0;">Link 1</li>
+                <li style="margin: 0.5rem 0;">Link 2</li>
+                <li style="margin: 0.5rem 0;">Link 3</li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <h2>🔻 Rodapé Centralizado</h2>
+        <p>&copy; 2024 - Curso de CSS Layout</p>
+        <p>Contato: email@exemplo.com</p>
+    </footer>
+
+    <div class="info-box">
+        <h2>📚 O Que Você Aprendeu</h2>
+        <ul>
+            <li>✅ Criar layout de duas colunas com Flexbox</li>
+            <li>✅ Usar <code>flex: 1</code> para elementos que crescem</li>
+            <li>✅ Usar <code>flex: 0 0 [tamanho]</code> para largura fixa</li>
+            <li>✅ Centralizar conteúdo com <code>flex-direction: column</code></li>
+            <li>✅ Combinar <code>align-items</code> e <code>justify-content</code></li>
+        </ul>
+        <p><strong>Próximo passo: Vamos aprender CSS Grid para layouts mais complexos!</strong></p>
+    </div>
+</body>
+</html>
