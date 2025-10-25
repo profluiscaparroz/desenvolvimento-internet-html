@@ -1,105 +1,21 @@
 <!DOCTYPE html>
-<!-- Declaração HTML5 -->
-<html lang="en">
-<!-- Lang em inglês (deveria ser pt-BR para consistência) -->
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <!-- Codificação UTF-8 para caracteres especiais -->
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Meta viewport ESSENCIAL para Bootstrap - torna o site responsivo -->
-    
-    <title>Exemplo Bootstrap</title>
-    <!-- Título da página -->
-    
-    <!-- Bootstrap CSS via CDN (Content Delivery Network) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- CDN oferece vantagens: velocidade, cache, atualizações automáticas -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Projeto Bootstrap</title>
+
+  <!-- CSS do Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
-    <!-- Container do Bootstrap - centraliza e adiciona responsividade -->
-    <div class="container mt-5">
-        <!-- 
-        Classes Bootstrap utilizadas:
-        - container: largura responsiva com margens automáticas
-        - mt-5: margin-top de 3rem (48px) - sistema de espaçamento Bootstrap
-        -->
-        
-        <h1 class="text-center">Exemplo Simples com Bootstrap</h1>
-        <!-- text-center: centraliza o texto horizontalmente -->
-        
-        <p class="text-center">Este é um exemplo básico utilizando o framework Bootstrap.</p>
-        <!-- Parágrafo centralizado -->
-        
-        <!-- Sistema de Grid Bootstrap: row (linha) + col (colunas) -->
-        <div class="row">
-            <!-- row: cria uma linha no sistema de grid -->
-            
-            <div class="col-md-4">
-                <!-- 
-                col-md-4: ocupa 4 colunas de 12 em telas médias (≥768px)
-                Bootstrap usa sistema de 12 colunas
-                md = medium, para tablets e desktops pequenos
-                -->
-                
-                <!-- Card Bootstrap - componente para conteúdo agrupado -->
-                <div class="card">
-                    <!-- card: container principal do componente -->
-                    
-                    <div class="card-body">
-                        <!-- card-body: área interna do card com padding -->
-                        
-                        <h5 class="card-title">Card 1</h5>
-                        <!-- card-title: estilo específico para títulos de cards -->
-                        
-                        <p class="card-text">Este é um exemplo de card.</p>
-                        <!-- card-text: estilo para texto do card -->
-                        
-                        <a href="#" class="btn btn-primary">Saiba mais</a>
-                        <!-- 
-                        Classes de botão Bootstrap:
-                        - btn: classe base para botões
-                        - btn-primary: botão com cor primária (azul)
-                        # = link vazio (placeholder)
-                        -->
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <!-- Segunda coluna - mesmo tamanho (4/12) -->
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card 2</h5>
-                        <p class="card-text">Este é outro exemplo de card.</p>
-                        <a href="#" class="btn btn-primary">Saiba mais</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <!-- Terceira coluna - completa as 12 colunas (4+4+4=12) -->
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card 3</h5>
-                        <p class="card-text">Mais um exemplo de card.</p>
-                        <a href="#" class="btn btn-primary">Saiba mais</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Fim da row - as 3 colunas ficam lado a lado em telas ≥768px -->
-    </div>
-    
-    <!-- Bootstrap JavaScript Bundle (inclui Popper.js para componentes interativos) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- 
-    JavaScript necessário para:
-    - Modals (janelas modais)
-    - Dropdowns
-    - Tooltips
-    - Carousels
-    - Collapse (acordeões)
-    -->
+  <div class="container text-center mt-5">
+    <h1 class="text-primary">Olá, Bootstrap!</h1>
+    <button class="btn btn-success">Clique Aqui</button>
+  </div>
+
+  <!-- JavaScript do Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
