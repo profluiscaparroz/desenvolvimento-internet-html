@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo CSS Puro</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        text-align: center;
+      }
+      
+      .container {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+      
+      .coluna {
+        width: 45%;
+        padding: 20px;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      
+      .botao {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      
+      .botao:hover {
+        background-color: #0056b3;
+      }
+      
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="coluna">Coluna 1</div>
+    <div class="coluna">Coluna 2</div>
+  </div>
+
+  <button class="botao">Clique Aqui</button>
+</body>
+</html>
