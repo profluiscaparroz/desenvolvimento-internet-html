@@ -294,6 +294,324 @@
         </form>
     </div>
     
+    <!-- Nova seção: Formulários com Bootstrap -->
+    <div class="form-container">
+        <h2>Formulários com Bootstrap</h2>
+        <p>O Bootstrap oferece classes e componentes prontos para criar formulários modernos e responsivos de forma rápida e eficiente.</p>
+        <div class="info">
+            <strong>Bootstrap 5:</strong> Utilizaremos o Bootstrap 5, que não depende de jQuery e oferece melhor performance.
+        </div>
+    </div>
+    
+    <!-- Exemplo 1: Formulário Bootstrap Básico -->
+    <div class="form-container">
+        <h3>Exemplo 1: Formulário Bootstrap Básico</h3>
+        <p>Exemplo mais simples de um formulário usando classes do Bootstrap:</p>
+        
+        <form id="bootstrap-form-1" class="bootstrap-form">
+            <div class="mb-3">
+                <label for="bs-nome" class="form-label">Nome:</label>
+                <input type="text" class="form-control" id="bs-nome" placeholder="Digite seu nome">
+            </div>
+            
+            <div class="mb-3">
+                <label for="bs-email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="bs-email" placeholder="seu@email.com">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+        
+        <div class="info" style="margin-top: 15px;">
+            <strong>Classes Bootstrap usadas:</strong><br>
+            • <code>form-control</code>: Estiliza inputs<br>
+            • <code>form-label</code>: Estiliza labels<br>
+            • <code>mb-3</code>: Margin-bottom (espaçamento)<br>
+            • <code>btn btn-primary</code>: Botão estilizado
+        </div>
+    </div>
+    
+    <!-- Exemplo 2: Formulário com Estados de Validação -->
+    <div class="form-container">
+        <h3>Exemplo 2: Formulário com Estados de Validação do Bootstrap</h3>
+        <p>Bootstrap oferece classes para mostrar visualmente campos válidos e inválidos:</p>
+        
+        <form id="bootstrap-form-2" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="bs-usuario" class="form-label">Usuário:</label>
+                <input type="text" class="form-control" id="bs-usuario" required>
+                <div class="valid-feedback">
+                    Perfeito! Nome de usuário válido.
+                </div>
+                <div class="invalid-feedback">
+                    Por favor, escolha um nome de usuário.
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="bs-email-2" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="bs-email-2" required>
+                <div class="valid-feedback">
+                    Email válido!
+                </div>
+                <div class="invalid-feedback">
+                    Por favor, forneça um email válido.
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="bs-senha-2" class="form-label">Senha:</label>
+                <input type="password" class="form-control" id="bs-senha-2" minlength="6" required>
+                <div class="valid-feedback">
+                    Senha forte!
+                </div>
+                <div class="invalid-feedback">
+                    Senha deve ter no mínimo 6 caracteres.
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="bs-termos" required>
+                    <label class="form-check-label" for="bs-termos">
+                        Concordo com os termos de uso
+                    </label>
+                    <div class="invalid-feedback">
+                        Você deve concordar antes de enviar.
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+        
+        <div class="info" style="margin-top: 15px;">
+            <strong>Classes de validação Bootstrap:</strong><br>
+            • <code>needs-validation</code>: Ativa validação HTML5<br>
+            • <code>valid-feedback</code>: Mensagem de sucesso<br>
+            • <code>invalid-feedback</code>: Mensagem de erro<br>
+            • <code>form-check</code>: Container para checkboxes/radios
+        </div>
+    </div>
+    
+    <!-- Exemplo 3: Formulário com Input Groups -->
+    <div class="form-container">
+        <h3>Exemplo 3: Formulário com Input Groups e Add-ons</h3>
+        <p>Input groups permitem adicionar ícones, texto ou botões aos campos:</p>
+        
+        <form id="bootstrap-form-3">
+            <div class="mb-3">
+                <label for="bs-username" class="form-label">Nome de Usuário:</label>
+                <div class="input-group">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" id="bs-username" placeholder="usuario">
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="bs-website" class="form-label">Website:</label>
+                <div class="input-group">
+                    <span class="input-group-text">https://</span>
+                    <input type="text" class="form-control" id="bs-website" placeholder="seusite.com">
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="bs-preco" class="form-label">Preço:</label>
+                <div class="input-group">
+                    <span class="input-group-text">R$</span>
+                    <input type="number" class="form-control" id="bs-preco" placeholder="0,00">
+                    <span class="input-group-text">,00</span>
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="bs-busca" class="form-label">Buscar:</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="bs-busca" placeholder="Digite sua busca">
+                    <button class="btn btn-outline-secondary" type="button">
+                        🔍 Buscar
+                    </button>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-success">Salvar</button>
+        </form>
+        
+        <div class="info" style="margin-top: 15px;">
+            <strong>Input Groups:</strong><br>
+            • <code>input-group</code>: Container do grupo<br>
+            • <code>input-group-text</code>: Adiciona texto antes/depois do input<br>
+            • Permite combinar inputs com botões e ícones
+        </div>
+    </div>
+    
+    <!-- Exemplo 4: Formulário com Floating Labels -->
+    <div class="form-container">
+        <h3>Exemplo 4: Formulário com Floating Labels (Avançado)</h3>
+        <p>Floating labels criam um efeito moderno onde o label se move para cima quando o campo é preenchido:</p>
+        
+        <form id="bootstrap-form-4">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="float-name" placeholder="Seu nome">
+                <label for="float-name">Nome Completo</label>
+            </div>
+            
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="float-email" placeholder="name@exemplo.com">
+                <label for="float-email">Endereço de Email</label>
+            </div>
+            
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="float-password" placeholder="Senha">
+                <label for="float-password">Senha</label>
+            </div>
+            
+            <div class="form-floating mb-3">
+                <select class="form-select" id="float-select">
+                    <option selected>Escolha uma opção</option>
+                    <option value="1">Opção 1</option>
+                    <option value="2">Opção 2</option>
+                    <option value="3">Opção 3</option>
+                </select>
+                <label for="float-select">Selecione</label>
+            </div>
+            
+            <div class="form-floating mb-3">
+                <textarea class="form-control" placeholder="Deixe um comentário" id="float-textarea" style="height: 100px"></textarea>
+                <label for="float-textarea">Comentários</label>
+            </div>
+            
+            <button type="submit" class="btn btn-info text-white">Enviar com Estilo</button>
+        </form>
+        
+        <div class="info" style="margin-top: 15px;">
+            <strong>Floating Labels:</strong><br>
+            • <code>form-floating</code>: Ativa o efeito de floating<br>
+            • O <code>placeholder</code> é obrigatório (pode ser vazio)<br>
+            • Label deve vir DEPOIS do input no HTML<br>
+            • Funciona com inputs, selects e textareas
+        </div>
+    </div>
+    
+    <!-- Exemplo 5: Formulário Multi-Step Complexo -->
+    <div class="form-container">
+        <h3>Exemplo 5: Formulário Multi-Step Complexo com Bootstrap</h3>
+        <p>Formulário dividido em etapas com barra de progresso e navegação entre passos:</p>
+        
+        <!-- Barra de progresso -->
+        <div class="progress mb-4" style="height: 25px;">
+            <div class="progress-bar" id="form-progress" role="progressbar" style="width: 33%;" 
+                 aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">Etapa 1 de 3</div>
+        </div>
+        
+        <form id="multi-step-form">
+            <!-- Etapa 1: Informações Pessoais -->
+            <div class="form-step" id="step-1">
+                <h4>Etapa 1: Informações Pessoais</h4>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="ms-nome" class="form-label">Nome:</label>
+                        <input type="text" class="form-control" id="ms-nome" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="ms-sobrenome" class="form-label">Sobrenome:</label>
+                        <input type="text" class="form-control" id="ms-sobrenome" required>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="ms-email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="ms-email" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="ms-telefone" class="form-label">Telefone:</label>
+                    <input type="tel" class="form-control" id="ms-telefone" required>
+                </div>
+                
+                <button type="button" class="btn btn-primary next-step">Próximo →</button>
+            </div>
+            
+            <!-- Etapa 2: Endereço -->
+            <div class="form-step d-none" id="step-2">
+                <h4>Etapa 2: Endereço</h4>
+                
+                <div class="mb-3">
+                    <label for="ms-cep" class="form-label">CEP:</label>
+                    <input type="text" class="form-control" id="ms-cep" placeholder="00000-000">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="ms-rua" class="form-label">Rua:</label>
+                    <input type="text" class="form-control" id="ms-rua" required>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="ms-numero" class="form-label">Número:</label>
+                        <input type="text" class="form-control" id="ms-numero" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="ms-complemento" class="form-label">Complemento:</label>
+                        <input type="text" class="form-control" id="ms-complemento">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="ms-cidade" class="form-label">Cidade:</label>
+                        <input type="text" class="form-control" id="ms-cidade" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="ms-estado" class="form-label">Estado:</label>
+                        <select class="form-select" id="ms-estado" required>
+                            <option value="">Selecione...</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="MG">Minas Gerais</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-secondary prev-step">← Anterior</button>
+                <button type="button" class="btn btn-primary next-step">Próximo →</button>
+            </div>
+            
+            <!-- Etapa 3: Confirmação -->
+            <div class="form-step d-none" id="step-3">
+                <h4>Etapa 3: Confirmação</h4>
+                
+                <div class="alert alert-info">
+                    <strong>Revise suas informações antes de enviar:</strong>
+                </div>
+                
+                <div id="review-data" class="mb-3">
+                    <!-- Os dados serão inseridos aqui via JavaScript -->
+                </div>
+                
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="ms-confirm" required>
+                    <label class="form-check-label" for="ms-confirm">
+                        Confirmo que todas as informações estão corretas
+                    </label>
+                </div>
+                
+                <button type="button" class="btn btn-secondary prev-step">← Anterior</button>
+                <button type="submit" class="btn btn-success">✓ Enviar Cadastro</button>
+            </div>
+        </form>
+        
+        <div class="info" style="margin-top: 15px;">
+            <strong>Formulário Multi-Step:</strong><br>
+            • Usa <code>d-none</code> para ocultar etapas<br>
+            • <code>progress-bar</code> mostra progresso visual<br>
+            • JavaScript gerencia navegação entre etapas<br>
+            • Layout responsivo com <code>row</code> e <code>col-*</code>
+        </div>
+    </div>
+
     <script>
         // JavaScript para validação personalizada
         document.addEventListener('DOMContentLoaded', function() {
@@ -377,6 +695,456 @@
             console.log('Dados do formulário:', dados);
             alert('Formulário enviado! Veja o console para ver os dados coletados.');
         });
+        
+        // ====== JAVASCRIPT PARA FORMULÁRIOS BOOTSTRAP ======
+        
+        // Exemplo 1: Formulário Bootstrap Básico
+        document.getElementById('bootstrap-form-1').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Formulário Bootstrap básico enviado!');
+        });
+        
+        // Exemplo 2: Validação Bootstrap
+        (function() {
+            'use strict';
+            const forms = document.querySelectorAll('.needs-validation');
+            
+            Array.from(forms).forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    } else {
+                        event.preventDefault();
+                        alert('Formulário validado com sucesso!');
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+        
+        // Exemplo 3: Input Groups
+        document.getElementById('bootstrap-form-3').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Formulário com Input Groups enviado!');
+        });
+        
+        // Exemplo 4: Floating Labels
+        document.getElementById('bootstrap-form-4').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Formulário com Floating Labels enviado!');
+        });
+        
+        // Exemplo 5: Formulário Multi-Step
+        let currentStep = 1;
+        const totalSteps = 3;
+        
+        document.querySelectorAll('.next-step').forEach(button => {
+            button.addEventListener('click', function() {
+                if (validateStep(currentStep)) {
+                    document.getElementById('step-' + currentStep).classList.add('d-none');
+                    currentStep++;
+                    document.getElementById('step-' + currentStep).classList.remove('d-none');
+                    updateProgressBar();
+                    
+                    if (currentStep === 3) {
+                        showReview();
+                    }
+                }
+            });
+        });
+        
+        document.querySelectorAll('.prev-step').forEach(button => {
+            button.addEventListener('click', function() {
+                document.getElementById('step-' + currentStep).classList.add('d-none');
+                currentStep--;
+                document.getElementById('step-' + currentStep).classList.remove('d-none');
+                updateProgressBar();
+            });
+        });
+        
+        document.getElementById('multi-step-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (document.getElementById('ms-confirm').checked) {
+                alert('Cadastro concluído com sucesso! Todos os dados foram coletados.');
+                this.reset();
+                currentStep = 1;
+                document.querySelectorAll('.form-step').forEach((step, index) => {
+                    if (index === 0) {
+                        step.classList.remove('d-none');
+                    } else {
+                        step.classList.add('d-none');
+                    }
+                });
+                updateProgressBar();
+            }
+        });
+        
+        function validateStep(step) {
+            const stepElement = document.getElementById('step-' + step);
+            const inputs = stepElement.querySelectorAll('input[required], select[required]');
+            let valid = true;
+            
+            inputs.forEach(input => {
+                if (!input.value) {
+                    valid = false;
+                    input.classList.add('is-invalid');
+                } else {
+                    input.classList.remove('is-invalid');
+                }
+            });
+            
+            if (!valid) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+            }
+            
+            return valid;
+        }
+        
+        function updateProgressBar() {
+            const progress = (currentStep / totalSteps) * 100;
+            const progressBar = document.getElementById('form-progress');
+            progressBar.style.width = progress + '%';
+            progressBar.setAttribute('aria-valuenow', progress);
+            progressBar.textContent = 'Etapa ' + currentStep + ' de ' + totalSteps;
+        }
+        
+        function showReview() {
+            const reviewData = document.getElementById('review-data');
+            const data = {
+                'Nome': document.getElementById('ms-nome').value + ' ' + document.getElementById('ms-sobrenome').value,
+                'Email': document.getElementById('ms-email').value,
+                'Telefone': document.getElementById('ms-telefone').value,
+                'CEP': document.getElementById('ms-cep').value,
+                'Endereço': document.getElementById('ms-rua').value + ', ' + document.getElementById('ms-numero').value,
+                'Cidade': document.getElementById('ms-cidade').value + ' - ' + document.getElementById('ms-estado').value
+            };
+            
+            let html = '<div class="card"><div class="card-body">';
+            for (let key in data) {
+                html += '<p><strong>' + key + ':</strong> ' + data[key] + '</p>';
+            }
+            html += '</div></div>';
+            
+            reviewData.innerHTML = html;
+        }
     </script>
+    
+    <!-- Link do Bootstrap CSS (deve estar no head, mas colocado aqui para demonstração) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        /* Estilos adicionais para os formulários Bootstrap */
+        .bootstrap-form .form-control,
+        .bootstrap-form .form-select {
+            border-radius: 5px;
+        }
+        
+        .form-step {
+            min-height: 300px;
+        }
+        
+        /* Classes do Bootstrap para os exemplos */
+        .mb-3 {
+            margin-bottom: 1rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        
+        .form-control:focus {
+            color: #212529;
+            background-color: #fff;
+            border-color: #86b7fe;
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+        
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            border-radius: 0.25rem;
+            border: 1px solid transparent;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+        }
+        
+        .btn-primary {
+            color: #fff;
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            border-color: #0a58ca;
+        }
+        
+        .btn-success {
+            color: #fff;
+            background-color: #198754;
+            border-color: #198754;
+        }
+        
+        .btn-info {
+            color: #000;
+            background-color: #0dcaf0;
+            border-color: #0dcaf0;
+        }
+        
+        .btn-secondary {
+            color: #fff;
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+        
+        .text-white {
+            color: #fff !important;
+        }
+        
+        .d-none {
+            display: none !important;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -0.75rem;
+            margin-left: -0.75rem;
+        }
+        
+        .col-md-6 {
+            flex: 0 0 auto;
+            width: 100%;
+            padding-right: 0.75rem;
+            padding-left: 0.75rem;
+        }
+        
+        @media (min-width: 768px) {
+            .col-md-6 {
+                width: 50%;
+            }
+        }
+        
+        .progress {
+            display: flex;
+            height: 1rem;
+            overflow: hidden;
+            background-color: #e9ecef;
+            border-radius: 0.25rem;
+        }
+        
+        .progress-bar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            background-color: #0d6efd;
+            transition: width 0.6s ease;
+        }
+        
+        .alert {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+        }
+        
+        .alert-info {
+            color: #055160;
+            background-color: #cff4fc;
+            border-color: #b6effb;
+        }
+        
+        .card {
+            border: 1px solid rgba(0,0,0,.125);
+            border-radius: 0.25rem;
+        }
+        
+        .card-body {
+            flex: 1 1 auto;
+            padding: 1rem;
+        }
+        
+        .input-group {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            width: 100%;
+        }
+        
+        .input-group-text {
+            display: flex;
+            align-items: center;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: center;
+            white-space: nowrap;
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+        }
+        
+        .input-group > .form-control {
+            position: relative;
+            flex: 1 1 auto;
+            width: 1%;
+            min-width: 0;
+        }
+        
+        .form-select {
+            display: block;
+            width: 100%;
+            padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            appearance: none;
+        }
+        
+        .form-check {
+            display: block;
+            min-height: 1.5rem;
+            padding-left: 1.5em;
+            margin-bottom: 0.125rem;
+        }
+        
+        .form-check-input {
+            width: 1em;
+            height: 1em;
+            margin-top: 0.25em;
+            vertical-align: top;
+            background-color: #fff;
+            border: 1px solid rgba(0,0,0,.25);
+            appearance: none;
+            print-color-adjust: exact;
+            float: left;
+            margin-left: -1.5em;
+        }
+        
+        .form-check-input[type="checkbox"] {
+            border-radius: 0.25em;
+        }
+        
+        .form-check-label {
+            display: inline-block;
+        }
+        
+        .form-floating {
+            position: relative;
+        }
+        
+        .form-floating > .form-control,
+        .form-floating > .form-select {
+            height: calc(3.5rem + 2px);
+            padding: 1rem 0.75rem;
+        }
+        
+        .form-floating > label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            padding: 1rem 0.75rem;
+            pointer-events: none;
+            border: 1px solid transparent;
+            transform-origin: 0 0;
+            transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+        }
+        
+        .form-floating > .form-control:focus ~ label,
+        .form-floating > .form-control:not(:placeholder-shown) ~ label,
+        .form-floating > .form-select ~ label {
+            opacity: 0.65;
+            transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+        }
+        
+        .was-validated .form-control:valid,
+        .form-control.is-valid {
+            border-color: #198754;
+            padding-right: calc(1.5em + 0.75rem);
+        }
+        
+        .was-validated .form-control:invalid,
+        .form-control.is-invalid {
+            border-color: #dc3545;
+            padding-right: calc(1.5em + 0.75rem);
+        }
+        
+        .valid-feedback {
+            display: none;
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: 0.875em;
+            color: #198754;
+        }
+        
+        .invalid-feedback {
+            display: none;
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: 0.875em;
+            color: #dc3545;
+        }
+        
+        .was-validated .form-control:valid ~ .valid-feedback,
+        .was-validated .form-control:valid ~ .valid-tooltip,
+        .form-control.is-valid ~ .valid-feedback,
+        .form-control.is-valid ~ .valid-tooltip {
+            display: block;
+        }
+        
+        .was-validated .form-control:invalid ~ .invalid-feedback,
+        .was-validated .form-control:invalid ~ .invalid-tooltip,
+        .form-control.is-invalid ~ .invalid-feedback,
+        .form-control.is-invalid ~ .invalid-tooltip {
+            display: block;
+        }
+        
+        .btn-outline-secondary {
+            color: #6c757d;
+            border-color: #6c757d;
+            background-color: transparent;
+        }
+        
+        .btn-outline-secondary:hover {
+            color: #fff;
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+    </style>
 </body>
 </html>
