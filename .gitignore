@@ -1,1 +1,72 @@
 .DS_Store
+# Ambiente virtual
+.venv/
+
+# Arquivos temporários
+__pycache__/
+*.pyc
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+# Configurações do editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+# Logs
+logs/
+*.log
+# Arquivos de build
+build/
+dist/
+# Dependências
+node_modules/
+vendor/
+# Arquivos de configuração sensíveis
+.env
+config.json
+secrets.json
+# Arquivos de banco de dados
+*.sqlite3
+*.db
+# Arquivos de mídia
+media/
+uploads/
+# Arquivos de cache
+.cache/
+*.tmp
+# Arquivos de backup
+*.bak
+*~
+# Outros
+coverage/
+*.cover
+.cache
+.pytest_cache/
+htmlcov/
+.tox/
+.eggs/
+*.egg-info/
+pip-wheel-metadata/
+.installed.cfg
+*.log
+*.pot
+*.mo
+*.orig
+*.rej
+*.swp
+*.swo
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.ipr
+*.iws
+*.log
+*.out
+*.pid
+*.seed
+*.pid.lock
+*.gz

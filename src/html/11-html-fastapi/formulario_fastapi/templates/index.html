@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Início - Sistema de Usuários</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .menu {
+            margin-top: 40px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 15px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            margin-top: 50px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo ao Sistema de Cadastro de Usuários</h1>
+    <p>Escolha uma das opções abaixo:</p>
+
+    <div class="menu">
+        <a href="/formulario">➕ Cadastrar Novo Usuário</a>
+        <a href="/usuarios">📋 Ver Lista de Usuários</a>
+    </div>
+
+    <footer>
+        <p>Exemplo educativo desenvolvido em FastAPI - {{ request.url.hostname }}</p>
+    </footer>
+</body>
+</html>

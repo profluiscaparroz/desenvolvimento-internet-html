@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuários Cadastrados</title>
+</head>
+<body>
+    <h1>Usuários Cadastrados</h1>
+
+    {% if usuarios %}
+        <table border="1" cellpadding="8">
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Idade</th>
+            </tr>
+            {% for u in usuarios %}
+            <tr>
+                <td>{{ u.nome }}</td>
+                <td>{{ u.email }}</td>
+                <td>{{ u.idade }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Nenhum usuário cadastrado ainda.</p>
+    {% endif %}
+    
+    <br><a href="/">🏠 Voltar à Página Inicial</a>
+    <br><a href="/">Voltar para o formulário</a>
+</body>
+</html>
