@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Formulário</title>
+</head>
+<body>
+    <form id="meuFormulario">
+        <input type="text" name="nome" placeholder="Digite seu nome" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        const form = document.getElementById("meuFormulario");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault(); // evita o recarregamento da página
+
+            const dados = Object.fromEntries(new FormData(form));
+
+            try {
+                const resp = await fetch("/api/enviar", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(dados),
+                });
+
+                if (!resp.ok) {
+                    throw new Error("Erro ao enviar os dados");
+                }
+
+                const resultado = await resp.json();
+                console.log("Resposta do servidor:", resultado);
+                alert("Formulário enviado com sucesso!");
+            } catch (error) {
+                console.error("Erro:", error);
+                alert("Ocorreu um erro ao enviar o formulário. Tente novamente.");
+            }
+        });
+    </script>
+</body>
+</html>

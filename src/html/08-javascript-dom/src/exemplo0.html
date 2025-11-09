@@ -9,6 +9,18 @@
     <div id="pai">
         <p id="elemento">Este é o elemento</p>
         <p>Outro filho</p>
+        <input id="nome" placeholder="Digite seu nome">
+<p id="saida"></p>
+
+<script>
+  const input = document.getElementById("nome");
+  const saida = document.getElementById("saida");
+
+  input.addEventListener("input", () => {
+    saida.textContent = "Digitando: " + input.value;
+  });
+</script>
+
     </div>
 
     <script>
