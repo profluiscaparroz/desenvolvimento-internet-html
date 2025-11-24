@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- 02-html-estrutura-semantica: Metadados -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio Profissional - Exemplo completo de desenvolvimento web">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap, Desenvolvimento Web">
+    <meta name="author" content="Estudante de Desenvolvimento Web">
+    
+    <!-- Open Graph para redes sociais -->
+    <meta property="og:title" content="Portfólio Profissional">
+    <meta property="og:description" content="Demonstração de todos os conceitos aprendidos">
+    <meta property="og:type" content="website">
+    
+    <title>Meu Portfólio Profissional - Revisão Completa</title>
+    
+    <!-- 09-frameworks-bootstrap: Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- CSS customizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 01-html-basico + 02-html-estrutura-semantica: Estrutura semântica -->
+    
+    <!-- Header com navegação -->
+    <header class="header-principal">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#home">
+                    <strong>💼 Meu Portfólio</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#habilidades">Habilidades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projetos">Projetos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 05-css-layout: Seção Hero com Grid -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title fade-in">Olá, eu sou <span class="text-highlight">Desenvolvedor Web</span></h1>
+                <p class="hero-subtitle slide-up">Criando experiências digitais incríveis com HTML, CSS e JavaScript</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="mostrarMensagem('Bem-vindo ao meu portfólio!')">
+                        Ver Projetos
+                    </button>
+                    <button class="btn btn-outline-light btn-lg ms-3" onclick="scrollToSection('contato')">
+                        Entre em Contato
+                    </button>
+                </div>
+            </div>
+            <!-- 06-css-avancado: Formas geométricas decorativas -->
+            <div class="decoracao decoracao-1"></div>
+            <div class="decoracao decoracao-2"></div>
+        </section>
+
+        <!-- 02-html-estrutura-semantica: Seção Sobre -->
+        <section id="sobre" class="secao-sobre py-5">
+            <div class="container">
+                <h2 class="titulo-secao text-center mb-5">Sobre Mim</h2>
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <!-- 10-html5-avancado: Elementos semânticos -->
+                        <article class="sobre-conteudo">
+                            <p class="lead">
+                                Sou um desenvolvedor apaixonado por criar soluções web modernas e eficientes.
+                            </p>
+                            <p>
+                                Com conhecimentos sólidos em <strong>HTML5</strong>, <strong>CSS3</strong> e 
+                                <strong>JavaScript</strong>, busco constantemente aprender novas tecnologias e 
+                                melhores práticas de desenvolvimento.
+                            </p>
+                            <p>
+                                Este portfólio demonstra todos os conceitos aprendidos durante meu curso de 
+                                desenvolvimento web, incluindo layouts responsivos, animações CSS, manipulação 
+                                do DOM e integração com frameworks modernos.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- 05-css-layout: Card com Flexbox -->
+                        <div class="card sobre-card shadow">
+                            <div class="card-body">
+                                <h5 class="card-title">Formação Acadêmica</h5>
+                                <ul class="lista-formacao">
+                                    <li>📚 Desenvolvimento Web Full Stack</li>
+                                    <li>💻 HTML5, CSS3 e JavaScript</li>
+                                    <li>🎨 Design Responsivo e UX/UI</li>
+                                    <li>⚡ Frameworks e Bibliotecas Modernas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04-css-cores-medidas: Seção de Habilidades com gradientes -->
+        <section id="habilidades" class="secao-habilidades py-5">
+            <div class="container">
+                <h2 class="titulo-secao text-center mb-5">Minhas Habilidades</h2>
+                <div class="row g-4">
+                    <!-- 05-css-layout: Grid de cards -->
+                    <div class="col-md-4">
+                        <div class="card-habilidade">
+                            <div class="icone-habilidade">🌐</div>
+                            <h3>HTML5</h3>
+                            <p>Estrutura semântica, acessibilidade e SEO</p>
+                            <!-- 07-javascript-basico: Barra de progresso interativa -->
+                            <div class="progress-container">
+                                <div class="progress-bar" data-progress="90" id="html-progress">
+                                    <span class="progress-text">90%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-habilidade">
+                            <div class="icone-habilidade">🎨</div>
+                            <h3>CSS3</h3>
+                            <p>Flexbox, Grid, animações e responsividade</p>
+                            <div class="progress-container">
+                                <div class="progress-bar" data-progress="85" id="css-progress">
+                                    <span class="progress-text">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-habilidade">
+                            <div class="icone-habilidade">⚡</div>
+                            <h3>JavaScript</h3>
+                            <p>DOM, eventos, manipulação e lógica</p>
+                            <div class="progress-container">
+                                <div class="progress-bar" data-progress="80" id="js-progress">
+                                    <span class="progress-text">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-habilidade">
+                            <div class="icone-habilidade">🚀</div>
+                            <h3>Bootstrap</h3>
+                            <p>Componentes, grid system e utilidades</p>
+                            <div class="progress-container">
+                                <div class="progress-bar" data-progress="75" id="bootstrap-progress">
+                                    <span class="progress-text">75%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-habilidade">
+                            <div class="icone-habilidade">📱</div>
+                            <h3>Design Responsivo</h3>
+                            <p>Mobile-first e media queries</p>
+                            <div class="progress-container">
+                                <div class="progress-bar" data-progress="88" id="responsive-progress">
+                                    <span class="progress-text">88%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-habilidade">
+                            <div class="icone-habilidade">🔧</div>
+                            <h3>APIs</h3>
+                            <p>Integração com FastAPI e REST</p>
+                            <div class="progress-container">
+                                <div class="progress-bar" data-progress="70" id="api-progress">
+                                    <span class="progress-text">70%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 05-css-layout: Seção de Projetos com Grid -->
+        <section id="projetos" class="secao-projetos py-5">
+            <div class="container">
+                <h2 class="titulo-secao text-center mb-5">Meus Projetos</h2>
+                <div class="row g-4">
+                    <!-- 09-frameworks-bootstrap: Cards do Bootstrap -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card projeto-card h-100 shadow-sm">
+                            <div class="card-img-placeholder bg-gradient-1">
+                                <span class="projeto-numero">01</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Site Corporativo</h5>
+                                <p class="card-text">
+                                    Website responsivo com HTML5 semântico, CSS3 moderno e JavaScript interativo.
+                                </p>
+                                <div class="projeto-tags">
+                                    <span class="badge bg-primary">HTML</span>
+                                    <span class="badge bg-info">CSS</span>
+                                    <span class="badge bg-warning">JS</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent">
+                                <button class="btn btn-outline-primary btn-sm" onclick="verDetalhes('Site Corporativo')">
+                                    Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card projeto-card h-100 shadow-sm">
+                            <div class="card-img-placeholder bg-gradient-2">
+                                <span class="projeto-numero">02</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Dashboard Interativo</h5>
+                                <p class="card-text">
+                                    Painel de controle com gráficos dinâmicos, manipulação do DOM e visualização de dados.
+                                </p>
+                                <div class="projeto-tags">
+                                    <span class="badge bg-primary">HTML</span>
+                                    <span class="badge bg-success">CSS Grid</span>
+                                    <span class="badge bg-warning">JavaScript</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent">
+                                <button class="btn btn-outline-primary btn-sm" onclick="verDetalhes('Dashboard Interativo')">
+                                    Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card projeto-card h-100 shadow-sm">
+                            <div class="card-img-placeholder bg-gradient-3">
+                                <span class="projeto-numero">03</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Formulário Avançado</h5>
+                                <p class="card-text">
+                                    Sistema de formulários com validação em tempo real e integração com APIs REST.
+                                </p>
+                                <div class="projeto-tags">
+                                    <span class="badge bg-primary">HTML5</span>
+                                    <span class="badge bg-info">Bootstrap</span>
+                                    <span class="badge bg-danger">FastAPI</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent">
+                                <button class="btn btn-outline-primary btn-sm" onclick="verDetalhes('Formulário Avançado')">
+                                    Ver Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10-html5-avancado: Seção de Contato com Formulário -->
+        <section id="contato" class="secao-contato py-5">
+            <div class="container">
+                <h2 class="titulo-secao text-center mb-5">Entre em Contato</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <!-- 10-html5-avancado: Formulário com validação HTML5 -->
+                        <form id="formContato" class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="nome" class="form-label">Nome Completo *</label>
+                                    <input type="text" class="form-control" id="nome" name="nome" 
+                                           required minlength="3" maxlength="50">
+                                    <div class="invalid-feedback">
+                                        Por favor, insira seu nome completo.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">E-mail *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                    <div class="invalid-feedback">
+                                        Por favor, insira um e-mail válido.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="assunto" class="form-label">Assunto *</label>
+                                    <select class="form-select" id="assunto" name="assunto" required>
+                                        <option value="">Escolha uma opção...</option>
+                                        <option value="trabalho">Oportunidade de Trabalho</option>
+                                        <option value="projeto">Projeto Freelance</option>
+                                        <option value="duvida">Dúvida Técnica</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Por favor, selecione um assunto.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="mensagem" class="form-label">Mensagem *</label>
+                                    <textarea class="form-control" id="mensagem" name="mensagem" 
+                                              rows="5" required minlength="10" maxlength="500"></textarea>
+                                    <div class="char-counter">
+                                        <small id="contadorCaracteres" class="text-muted">0/500 caracteres</small>
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Por favor, escreva uma mensagem (mínimo 10 caracteres).
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="aceitoTermos" required>
+                                        <label class="form-check-label" for="aceitoTermos">
+                                            Aceito os termos de uso e política de privacidade *
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            Você deve aceitar os termos para continuar.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                                        Enviar Mensagem
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 02-html-estrutura-semantica: Footer semântico -->
+    <footer class="footer-principal py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">
+                        &copy; 2024 Portfólio Profissional. Todos os direitos reservados.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="redes-sociais">
+                        <a href="#" class="rede-social" aria-label="GitHub">
+                            <span>💻</span>
+                        </a>
+                        <a href="#" class="rede-social" aria-label="LinkedIn">
+                            <span>💼</span>
+                        </a>
+                        <a href="#" class="rede-social" aria-label="Twitter">
+                            <span>🐦</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 08-javascript-dom: Botão "Voltar ao Topo" -->
+    <button id="btnVoltarTopo" class="btn-voltar-topo" onclick="voltarAoTopo()" aria-label="Voltar ao topo">
+        ↑
+    </button>
+
+    <!-- 09-frameworks-bootstrap: Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- 07-javascript-basico + 08-javascript-dom: JavaScript customizado -->
+    <script src="script.js"></script>
+</body>
+</html>
