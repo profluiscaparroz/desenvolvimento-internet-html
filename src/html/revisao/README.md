@@ -2028,6 +2028,12 @@ Esta seção contém links para exemplos práticos e completos de cada módulo d
             
             try {
                 const resposta = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=3');
+                
+                // Verifica se a resposta foi bem-sucedida
+                if (!resposta.ok) {
+                    throw new Error(`HTTP error! status: ${resposta.status}`);
+                }
+                
                 const posts = await resposta.json();
                 
                 let html = '';
