@@ -5,11 +5,12 @@
 1. [Introdução](#introdução)
 2. [Objetivos da Sessão](#objetivos-da-sessão)
 3. [Conteúdo Revisado](#conteúdo-revisado)
-4. [Fluxo da Sessão de 2 Horas](#fluxo-da-sessão-de-2-horas)
-5. [Exemplo Prático Completo](#exemplo-prático-completo)
-6. [Conceitos Detalhados por Tópico](#conceitos-detalhados-por-tópico)
-7. [Exercícios Práticos](#exercícios-práticos)
-8. [Recursos Adicionais](#recursos-adicionais)
+4. [Exemplos Completos do Repositório](#exemplos-completos-do-repositório)
+5. [Fluxo da Sessão de 2 Horas](#fluxo-da-sessão-de-2-horas)
+6. [Exemplo Prático Completo](#exemplo-prático-completo)
+7. [Conceitos Detalhados por Tópico](#conceitos-detalhados-por-tópico)
+8. [Exercícios Práticos](#exercícios-práticos)
+9. [Recursos Adicionais](#recursos-adicionais)
 
 ---
 
@@ -871,6 +872,1204 @@ async function deletarUsuario(id) {
     return await resposta.json();
 }
 ```
+
+---
+
+## 📂 Exemplos Completos do Repositório
+
+Esta seção contém links para exemplos práticos e completos de cada módulo do curso, disponíveis diretamente no repositório. Estes exemplos são arquivos HTML, CSS e JavaScript que você pode abrir e estudar.
+
+---
+
+### 🔗 **Módulo 01: HTML Básico**
+
+**Localização**: [`src/html/01-html-basico/`](../01-html-basico/)
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [index.html](../01-html-basico/index.html) | Página inicial com estrutura básica HTML |
+| [pagina1.html](../01-html-basico/pagina1.html) | Exemplo de headings e parágrafos |
+| [pagina2.html](../01-html-basico/pagina2.html) | Exemplo de listas ordenadas e não ordenadas |
+| [pagina3.html](../01-html-basico/pagina3.html) | Exemplo de links e âncoras |
+
+**Exemplo Simples - Estrutura HTML Básica:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Primeira Página</title>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1>
+    <p>Este é meu primeiro parágrafo em HTML.</p>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <a href="https://github.com">Visite o GitHub</a>
+</body>
+</html>
+```
+
+---
+
+### 🔗 **Módulo 02: HTML Estrutura Semântica**
+
+**Localização**: [`src/html/02-html-estrutura-semantica/src/`](../02-html-estrutura-semantica/src/)
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [exemplo.html](../02-html-estrutura-semantica/src/exemplo.html) | Estrutura semântica completa |
+| [exemplo_tag_seo.html](../02-html-estrutura-semantica/src/exemplo_tag_seo.html) | Tags para SEO |
+| [exemplo_tag_open_graph.html](../02-html-estrutura-semantica/src/exemplo_tag_open_graph.html) | Meta tags Open Graph |
+| [exemplo_tag_responsividade.html](../02-html-estrutura-semantica/src/exemplo_tag_responsividade.html) | Tags de responsividade |
+
+**Exemplo Simples - HTML Semântico:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descrição da página para SEO">
+    <meta property="og:title" content="Título para Redes Sociais">
+    <title>Página Semântica</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home">
+            <h1>Bem-vindo ao Site</h1>
+            <article>
+                <h2>Artigo Principal</h2>
+                <p>Conteúdo do artigo...</p>
+            </article>
+        </section>
+        
+        <aside>
+            <h3>Informações Extras</h3>
+            <p>Conteúdo lateral...</p>
+        </aside>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Meu Site</p>
+    </footer>
+</body>
+</html>
+```
+
+---
+
+### 🔗 **Módulo 03: CSS Fundamentos**
+
+**Localização**: [`src/html/03-css-fundamentos/src/`](../03-css-fundamentos/src/)
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [exemplo.html](../03-css-fundamentos/src/exemplo.html) | Exemplo básico de CSS |
+| [exemploClasses.html](../03-css-fundamentos/src/exemploClasses.html) | Uso de classes CSS |
+| [exemploHierarquiaPrecedencia.html](../03-css-fundamentos/src/exemploHierarquiaPrecedencia.html) | Hierarquia e especificidade |
+| [exemploBootstrap.html](../03-css-fundamentos/src/exemploBootstrap.html) | CSS com Bootstrap |
+
+**Exemplo Simples - CSS Fundamentos:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Fundamentos</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Estilos do body */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+        
+        /* Seletor de classe */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Seletor de ID */
+        #titulo {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        /* Seletor de elemento */
+        p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        /* Hover */
+        .botao {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .botao:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="titulo">CSS Fundamentos</h1>
+        <p>Este é um exemplo de estilização com CSS.</p>
+        <button class="botao">Clique Aqui</button>
+    </div>
+</body>
+</html>
+```
+
+---
+
+### 🔗 **Módulo 04: CSS Cores e Medidas**
+
+**Localização**: [`src/html/04-css-cores-medidas/src/`](../04-css-cores-medidas/src/)
+
+| Pasta | Descrição |
+|-------|-----------|
+| [cores/](../04-css-cores-medidas/src/cores/) | Exemplos de sistemas de cores |
+| [medidas/](../04-css-cores-medidas/src/medidas/) | Exemplos de unidades de medida |
+
+**Exemplo Simples - Cores e Medidas:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cores e Medidas CSS</title>
+    <style>
+        :root {
+            --cor-primaria: #007bff;
+            --cor-secundaria: #6c757d;
+            --espaco-base: 1rem;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+        }
+        
+        /* Diferentes formas de cores */
+        .box-hex { background-color: #ff5733; }
+        .box-rgb { background-color: rgb(40, 167, 69); }
+        .box-rgba { background-color: rgba(0, 123, 255, 0.7); }
+        .box-hsl { background-color: hsl(280, 70%, 50%); }
+        
+        .box {
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-radius: 8px;
+        }
+        
+        /* Medidas relativas vs absolutas */
+        .texto-px { font-size: 16px; }      /* Absoluto */
+        .texto-em { font-size: 1.2em; }     /* Relativo ao pai */
+        .texto-rem { font-size: 1.5rem; }   /* Relativo ao root */
+        
+        /* Gradientes */
+        .gradiente-linear {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            padding: 20px;
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .gradiente-radial {
+            background: radial-gradient(circle, #f093fb, #f5576c);
+            padding: 20px;
+            color: white;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cores CSS</h1>
+    <div class="box box-hex">HEX</div>
+    <div class="box box-rgb">RGB</div>
+    <div class="box box-rgba">RGBA</div>
+    <div class="box box-hsl">HSL</div>
+    
+    <h2>Gradientes</h2>
+    <div class="gradiente-linear">Gradiente Linear</div>
+    <div class="gradiente-radial">Gradiente Radial</div>
+    
+    <h2>Medidas de Texto</h2>
+    <p class="texto-px">Texto em pixels (16px)</p>
+    <p class="texto-em">Texto em em (1.2em)</p>
+    <p class="texto-rem">Texto em rem (1.5rem)</p>
+</body>
+</html>
+```
+
+---
+
+### 🔗 **Módulo 05: CSS Layout**
+
+**Localização**: [`src/html/05-css-layout/src/`](../05-css-layout/src/)
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [index.html](../05-css-layout/src/index.html) | Índice de exemplos |
+| [flexbox-navbar.html](../05-css-layout/src/flexbox-navbar.html) | Navbar com Flexbox |
+| [grid-holy-grail.html](../05-css-layout/src/grid-holy-grail.html) | Layout Holy Grail com Grid |
+| [progressivo/](../05-css-layout/src/progressivo/) | Exemplos progressivos de layout |
+
+**Exemplo Simples - Flexbox e Grid:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Layout - Flexbox e Grid</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        
+        /* FLEXBOX - Navegação Horizontal */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            padding: 15px 20px;
+            border-radius: 8px;
+        }
+        
+        .navbar-brand { color: white; font-weight: bold; }
+        
+        .navbar-menu {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        
+        .navbar-menu a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* FLEXBOX - Cards em Linha */
+        .cards-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .card-flex {
+            flex: 1 1 200px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        /* CSS GRID - Layout de Página */
+        .page-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+            gap: 10px;
+            min-height: 400px;
+            margin-top: 30px;
+        }
+        
+        .header { grid-area: header; background: #007bff; color: white; padding: 15px; }
+        .sidebar { grid-area: sidebar; background: #e9ecef; padding: 15px; }
+        .main { grid-area: main; background: #f8f9fa; padding: 15px; }
+        .footer { grid-area: footer; background: #333; color: white; padding: 15px; }
+        
+        /* GRID - Cards Responsivos */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .card-grid {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Layout</h1>
+    
+    <h2>Flexbox - Navbar</h2>
+    <nav class="navbar">
+        <div class="navbar-brand">Logo</div>
+        <ul class="navbar-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <h2>Flexbox - Cards</h2>
+    <div class="cards-flex">
+        <div class="card-flex">Card 1</div>
+        <div class="card-flex">Card 2</div>
+        <div class="card-flex">Card 3</div>
+    </div>
+    
+    <h2>CSS Grid - Layout de Página</h2>
+    <div class="page-grid">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="main">Conteúdo Principal</div>
+        <div class="footer">Footer</div>
+    </div>
+    
+    <h2>CSS Grid - Cards Responsivos</h2>
+    <div class="cards-grid">
+        <div class="card-grid">Card 1</div>
+        <div class="card-grid">Card 2</div>
+        <div class="card-grid">Card 3</div>
+        <div class="card-grid">Card 4</div>
+    </div>
+</body>
+</html>
+```
+
+---
+
+### 🔗 **Módulo 06: CSS Avançado**
+
+**Localização**: [`src/html/06-css-avancado/`](../06-css-avancado/)
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [estilizando-div.html](../06-css-avancado/estilizando-div.html) | Estilização de divs |
+| [exemplo-leiaute.html](../06-css-avancado/exemplo-leiaute.html) | Exemplo de layout avançado |
+| [exemplo-nav-json.html](../06-css-avancado/exemplo-nav-json.html) | Navegação dinâmica |
+| [css/](../06-css-avancado/css/) | Arquivos CSS avançados |
+
+**Exemplo Simples - Animações e Transformações:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Avançado - Animações</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f0f0f0;
+        }
+        
+        /* Transições */
+        .btn-transicao {
+            background: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-transicao:hover {
+            background: #0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        /* Transformações */
+        .box-transform {
+            width: 100px;
+            height: 100px;
+            background: #28a745;
+            margin: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .box-transform:hover { transform: rotate(45deg) scale(1.2); }
+        
+        /* Keyframes Animation */
+        @keyframes pulsar {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        @keyframes deslizar {
+            0% { transform: translateX(-100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        
+        .animacao-pulsar {
+            animation: pulsar 2s infinite;
+            background: #dc3545;
+            color: white;
+            padding: 20px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .animacao-deslizar {
+            animation: deslizar 1s ease-out;
+            background: #6f42c1;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        /* Pseudo-elementos */
+        .titulo-decorado {
+            position: relative;
+            display: inline-block;
+            margin: 30px 0;
+        }
+        
+        .titulo-decorado::before {
+            content: "✨ ";
+        }
+        
+        .titulo-decorado::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            margin-top: 5px;
+        }
+        
+        /* Filtros */
+        .imagem-filtro {
+            width: 200px;
+            height: 150px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><rect fill="%23007bff" width="200" height="150"/><text x="50%" y="50%" fill="white" text-anchor="middle" dy=".3em">Imagem</text></svg>');
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+            border-radius: 8px;
+        }
+        
+        .imagem-filtro:hover {
+            filter: grayscale(0%) brightness(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Avançado</h1>
+    
+    <h2>Transições</h2>
+    <button class="btn-transicao">Passe o Mouse</button>
+    
+    <h2>Transformações</h2>
+    <div class="box-transform">Rotate</div>
+    
+    <h2 class="titulo-decorado">Pseudo-elementos</h2>
+    
+    <h2>Animações</h2>
+    <div class="animacao-pulsar">Pulsando</div>
+    <div class="animacao-deslizar">Deslizando da Esquerda</div>
+    
+    <h2>Filtros</h2>
+    <div class="imagem-filtro"></div>
+</body>
+</html>
+```
+
+---
+
+### 🔗 **Módulo 07: JavaScript Básico**
+
+**Localização**: [`src/html/07-javascript-basico/src/`](../07-javascript-basico/src/)
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [index.html](../07-javascript-basico/src/index.html) | Exemplo de JavaScript básico |
+| [variaveis-tipos.html](../07-javascript-basico/src/variaveis-tipos.html) | Variáveis e tipos de dados |
+
+**Exemplo Simples - JavaScript Básico:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Básico</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .output { background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 10px 0; }
+        button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Básico</h1>
+    
+    <h2>Variáveis e Tipos</h2>
+    <div class="output" id="variaveis"></div>
+    
+    <h2>Operações</h2>
+    <button onclick="somar()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <div class="output" id="operacoes"></div>
+    
+    <h2>Arrays</h2>
+    <button onclick="mostrarFrutas()">Mostrar Frutas</button>
+    <button onclick="adicionarFruta()">Adicionar Fruta</button>
+    <div class="output" id="arrays"></div>
+    
+    <h2>Objetos</h2>
+    <button onclick="mostrarPessoa()">Mostrar Pessoa</button>
+    <div class="output" id="objetos"></div>
+    
+    <script>
+        // Variáveis
+        const nome = "João";           // String - não muda
+        let idade = 25;                // Number - pode mudar
+        const ativo = true;            // Boolean
+        
+        // Mostrar variáveis
+        document.getElementById('variaveis').innerHTML = `
+            <strong>Nome:</strong> ${nome} (string)<br>
+            <strong>Idade:</strong> ${idade} (number)<br>
+            <strong>Ativo:</strong> ${ativo} (boolean)
+        `;
+        
+        // Funções de operações
+        function somar() {
+            const a = 10;
+            const b = 5;
+            const resultado = a + b;
+            document.getElementById('operacoes').innerHTML = `${a} + ${b} = ${resultado}`;
+        }
+        
+        function subtrair() {
+            const a = 10;
+            const b = 5;
+            const resultado = a - b;
+            document.getElementById('operacoes').innerHTML = `${a} - ${b} = ${resultado}`;
+        }
+        
+        // Arrays
+        const frutas = ["Maçã", "Banana", "Laranja"];
+        
+        function mostrarFrutas() {
+            let html = "<strong>Frutas:</strong><ul>";
+            frutas.forEach(function(fruta, index) {
+                html += `<li>${index + 1}. ${fruta}</li>`;
+            });
+            html += "</ul>";
+            document.getElementById('arrays').innerHTML = html;
+        }
+        
+        function adicionarFruta() {
+            const novaFruta = "Uva";
+            frutas.push(novaFruta);
+            mostrarFrutas();
+        }
+        
+        // Objetos
+        const pessoa = {
+            nome: "Maria",
+            idade: 30,
+            profissao: "Desenvolvedora",
+            apresentar: function() {
+                return `Olá, sou ${this.nome}, tenho ${this.idade} anos e sou ${this.profissao}.`;
+            }
+        };
+        
+        function mostrarPessoa() {
+            document.getElementById('objetos').innerHTML = `
+                <strong>Objeto Pessoa:</strong><br>
+                Nome: ${pessoa.nome}<br>
+                Idade: ${pessoa.idade}<br>
+                Profissão: ${pessoa.profissao}<br>
+                <em>${pessoa.apresentar()}</em>
+            `;
+        }
+    </script>
+</body>
+</html>
+```
+
+---
+
+### 🔗 **Módulo 08: JavaScript DOM**
+
+**Localização**: [`src/html/08-javascript-dom/src/`](../08-javascript-dom/src/)
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [1acessoDOM.html](../08-javascript-dom/src/1acessoDOM.html) | Acesso ao DOM |
+| [2manipulacaoConteudoDOM.html](../08-javascript-dom/src/2manipulacaoConteudoDOM.html) | Manipulação de conteúdo |
+| [3manipulacaoEventos.html](../08-javascript-dom/src/3manipulacaoEventos.html) | Manipulação de eventos |
+| [5eventosDOM.html](../08-javascript-dom/src/5eventosDOM.html) | Eventos do DOM |
+| [6estilosDOM.html](../08-javascript-dom/src/6estilosDOM.html) | Estilos via DOM |
+
+**Exemplo Simples - Manipulação do DOM:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript DOM</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .card { background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 15px 0; }
+        button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        button:hover { background: #0056b3; }
+        input { padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin: 5px; }
+        .destaque { background: #ffc107 !important; }
+        .lista-item { padding: 10px; margin: 5px 0; background: #e9ecef; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="titulo">JavaScript DOM</h1>
+        
+        <div class="card">
+            <h2>1. Seleção de Elementos</h2>
+            <p id="paragrafo">Este parágrafo pode ser modificado.</p>
+            <button onclick="alterarTexto()">Alterar Texto</button>
+            <button onclick="alterarEstilo()">Alterar Estilo</button>
+        </div>
+        
+        <div class="card">
+            <h2>2. Criar Elementos</h2>
+            <div id="lista-container"></div>
+            <input type="text" id="novo-item" placeholder="Digite um item">
+            <button onclick="adicionarItem()">Adicionar Item</button>
+        </div>
+        
+        <div class="card">
+            <h2>3. Event Listeners</h2>
+            <div id="area-click" style="background:#e9ecef; padding:30px; text-align:center; border-radius:8px; cursor:pointer;">
+                Clique aqui!
+            </div>
+            <p>Contador de cliques: <span id="contador">0</span></p>
+        </div>
+        
+        <div class="card">
+            <h2>4. Formulário</h2>
+            <form id="meu-form">
+                <input type="text" id="nome-input" placeholder="Seu nome" required>
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="resultado-form"></p>
+        </div>
+    </div>
+    
+    <script>
+        // 1. SELEÇÃO E MANIPULAÇÃO
+        function alterarTexto() {
+            const paragrafo = document.getElementById('paragrafo');
+            paragrafo.textContent = 'Texto alterado com JavaScript!';
+        }
+        
+        function alterarEstilo() {
+            const paragrafo = document.getElementById('paragrafo');
+            paragrafo.classList.toggle('destaque');
+        }
+        
+        // 2. CRIAR ELEMENTOS
+        function adicionarItem() {
+            const input = document.getElementById('novo-item');
+            const container = document.getElementById('lista-container');
+            
+            if (input.value.trim() !== '') {
+                const novoItem = document.createElement('div');
+                novoItem.className = 'lista-item';
+                novoItem.textContent = input.value;
+                
+                // Botão de remover
+                const btnRemover = document.createElement('button');
+                btnRemover.textContent = 'X';
+                btnRemover.style.cssText = 'float:right; background:#dc3545; padding:2px 8px;';
+                btnRemover.onclick = function() {
+                    novoItem.remove();
+                };
+                
+                novoItem.appendChild(btnRemover);
+                container.appendChild(novoItem);
+                input.value = '';
+            }
+        }
+        
+        // 3. EVENT LISTENERS
+        let cliques = 0;
+        const areaClick = document.getElementById('area-click');
+        const contadorElement = document.getElementById('contador');
+        
+        areaClick.addEventListener('click', function() {
+            cliques++;
+            contadorElement.textContent = cliques;
+            this.style.backgroundColor = `hsl(${cliques * 30}, 70%, 80%)`;
+        });
+        
+        // 4. FORMULÁRIO
+        const form = document.getElementById('meu-form');
+        form.addEventListener('submit', function(evento) {
+            evento.preventDefault();
+            
+            const nome = document.getElementById('nome-input').value;
+            const resultado = document.getElementById('resultado-form');
+            resultado.innerHTML = `<strong>Olá, ${nome}!</strong> Formulário enviado com sucesso.`;
+            
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+```
+
+---
+
+### 🔗 **Módulo 09: Bootstrap Framework**
+
+**Localização**: [`src/html/09-frameworks-bootstrap/src/`](../09-frameworks-bootstrap/src/)
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [exemplo.html](../09-frameworks-bootstrap/src/exemplo.html) | Exemplo básico Bootstrap |
+| [exemploGrid.html](../09-frameworks-bootstrap/src/exemploGrid.html) | Sistema de Grid |
+| [exemploModal.html](../09-frameworks-bootstrap/src/exemploModal.html) | Modal Bootstrap |
+| [exemplo-form.html](../09-frameworks-bootstrap/src/exemplo-form.html) | Formulários Bootstrap |
+| [bootstrap-avancado.html](../09-frameworks-bootstrap/src/bootstrap-avancado.html) | Recursos avançados |
+
+**Exemplo Simples - Bootstrap:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Framework</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">MeuSite</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Conteúdo -->
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Bootstrap Framework</h1>
+        
+        <!-- Grid System -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Card 1</h5>
+                        <p class="card-text">Exemplo de card Bootstrap.</p>
+                        <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Card 2</h5>
+                        <p class="card-text">Sistema de grid responsivo.</p>
+                        <a href="#" class="btn btn-success">Ver Detalhes</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Card 3</h5>
+                        <p class="card-text">Componentes pré-estilizados.</p>
+                        <a href="#" class="btn btn-warning">Explorar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botões -->
+        <div class="mb-5">
+            <h3>Botões</h3>
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-danger">Danger</button>
+            <button class="btn btn-outline-primary">Outline</button>
+        </div>
+        
+        <!-- Alertas -->
+        <div class="mb-5">
+            <h3>Alertas</h3>
+            <div class="alert alert-success">Sucesso! Operação realizada.</div>
+            <div class="alert alert-warning">Atenção! Verifique os dados.</div>
+            <div class="alert alert-danger">Erro! Algo deu errado.</div>
+        </div>
+        
+        <!-- Formulário -->
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Formulário</h3>
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Nome</label>
+                        <input type="text" class="form-control" placeholder="Seu nome">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="seu@email.com">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mensagem</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+```
+
+---
+
+### 🔗 **Módulo 10: HTML5 Avançado**
+
+**Localização**: [`src/html/10-html5-avancado/`](../10-html5-avancado/)
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [index.html](../10-html5-avancado/index.html) | Índice de exemplos HTML5 |
+| [formularios-avancados.html](../10-html5-avancado/formularios-avancados.html) | Formulários HTML5 |
+| [multimidia-html5.html](../10-html5-avancado/multimidia-html5.html) | Vídeo e áudio |
+| [semantico-acessibilidade.html](../10-html5-avancado/semantico-acessibilidade.html) | Semântica e acessibilidade |
+
+**Exemplo Simples - Formulários HTML5:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Avançado - Formulários</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        input:valid { border-color: #28a745; }
+        input:invalid:not(:placeholder-shown) { border-color: #dc3545; }
+        button { background: #007bff; color: white; padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .range-value { display: inline-block; width: 50px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>HTML5 Formulários Avançados</h1>
+    
+    <form id="form-avancado">
+        <!-- Email com validação -->
+        <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com">
+        </div>
+        
+        <!-- URL -->
+        <div class="form-group">
+            <label for="website">Website</label>
+            <input type="url" id="website" name="website" placeholder="https://seusite.com">
+        </div>
+        
+        <!-- Telefone com pattern -->
+        <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" 
+                   pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" 
+                   placeholder="11 99999-9999">
+            <small>Formato: XX XXXXX-XXXX</small>
+        </div>
+        
+        <!-- Número com min/max -->
+        <div class="form-group">
+            <label for="idade">Idade *</label>
+            <input type="number" id="idade" name="idade" min="18" max="100" required>
+        </div>
+        
+        <!-- Data -->
+        <div class="form-group">
+            <label for="nascimento">Data de Nascimento</label>
+            <input type="date" id="nascimento" name="nascimento">
+        </div>
+        
+        <!-- Range -->
+        <div class="form-group">
+            <label for="satisfacao">Satisfação: <span id="range-valor" class="range-value">50</span>%</label>
+            <input type="range" id="satisfacao" name="satisfacao" min="0" max="100" value="50"
+                   oninput="document.getElementById('range-valor').textContent = this.value">
+        </div>
+        
+        <!-- Color -->
+        <div class="form-group">
+            <label for="cor">Cor Favorita</label>
+            <input type="color" id="cor" name="cor" value="#007bff">
+        </div>
+        
+        <!-- Datalist (autocomplete) -->
+        <div class="form-group">
+            <label for="linguagem">Linguagem Favorita</label>
+            <input type="text" id="linguagem" name="linguagem" list="linguagens" placeholder="Escolha ou digite">
+            <datalist id="linguagens">
+                <option value="JavaScript">
+                <option value="Python">
+                <option value="Java">
+                <option value="C#">
+                <option value="PHP">
+            </datalist>
+        </div>
+        
+        <!-- Textarea com contador -->
+        <div class="form-group">
+            <label for="mensagem">Mensagem * <span id="contador">0</span>/500</label>
+            <textarea id="mensagem" name="mensagem" required minlength="10" maxlength="500" rows="4"
+                      oninput="document.getElementById('contador').textContent = this.value.length"></textarea>
+        </div>
+        
+        <button type="submit">Enviar Formulário</button>
+    </form>
+    
+    <script>
+        document.getElementById('form-avancado').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Formulário válido! Dados seriam enviados.');
+        });
+    </script>
+</body>
+</html>
+```
+
+---
+
+### 🔗 **Módulo 11: HTML com FastAPI**
+
+**Localização**: [`src/html/11-html-fastapi/`](../11-html-fastapi/)
+
+| Pasta | Descrição |
+|-------|-----------|
+| [exemplo-simples/](../11-html-fastapi/exemplo-simples/) | Exemplo simples de integração |
+| [formulario_fastapi/](../11-html-fastapi/formulario_fastapi/) | Formulário com FastAPI |
+| [formulario_fastapi_completo/](../11-html-fastapi/formulario_fastapi_completo/) | Exemplo completo |
+
+**Exemplo Simples - Integração com API:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML + API</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
+        .card { background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 15px 0; }
+        button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        button:hover { background: #0056b3; }
+        input { padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin: 5px; width: 200px; }
+        #resultado { background: #e9ecef; padding: 15px; border-radius: 8px; margin-top: 15px; }
+        .usuario-item { background: white; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #007bff; }
+        .loading { color: #6c757d; font-style: italic; }
+    </style>
+</head>
+<body>
+    <h1>Integração HTML + API</h1>
+    
+    <div class="card">
+        <h2>Buscar Dados (GET)</h2>
+        <button onclick="buscarUsuarios()">Buscar Usuários</button>
+        <div id="lista-usuarios"></div>
+    </div>
+    
+    <div class="card">
+        <h2>Enviar Dados (POST)</h2>
+        <form id="form-usuario" onsubmit="criarUsuario(event)">
+            <input type="text" id="nome" placeholder="Nome" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <button type="submit">Criar Usuário</button>
+        </form>
+        <div id="resultado-post"></div>
+    </div>
+    
+    <div class="card">
+        <h2>API Pública (JSONPlaceholder)</h2>
+        <button onclick="buscarPosts()">Buscar Posts</button>
+        <div id="lista-posts"></div>
+    </div>
+    
+    <script>
+        // Simulação de dados locais (substitua pela URL real da API)
+        const usuariosLocais = [
+            { id: 1, nome: "João Silva", email: "joao@email.com" },
+            { id: 2, nome: "Maria Santos", email: "maria@email.com" },
+            { id: 3, nome: "Pedro Costa", email: "pedro@email.com" }
+        ];
+        
+        // GET - Buscar usuários (simulado)
+        async function buscarUsuarios() {
+            const container = document.getElementById('lista-usuarios');
+            container.innerHTML = '<p class="loading">Carregando...</p>';
+            
+            // Simula delay de API
+            await new Promise(resolve => setTimeout(resolve, 500));
+            
+            let html = '';
+            usuariosLocais.forEach(usuario => {
+                html += `
+                    <div class="usuario-item">
+                        <strong>${usuario.nome}</strong><br>
+                        <small>${usuario.email}</small>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+        
+        // POST - Criar usuário (simulado)
+        async function criarUsuario(evento) {
+            evento.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const resultado = document.getElementById('resultado-post');
+            
+            resultado.innerHTML = '<p class="loading">Enviando...</p>';
+            
+            // Simula delay de API
+            await new Promise(resolve => setTimeout(resolve, 500));
+            
+            // Simula resposta do servidor
+            const novoUsuario = {
+                id: usuariosLocais.length + 1,
+                nome: nome,
+                email: email
+            };
+            
+            usuariosLocais.push(novoUsuario);
+            
+            resultado.innerHTML = `
+                <p style="color: #28a745;">✅ Usuário criado com sucesso!</p>
+                <pre>${JSON.stringify(novoUsuario, null, 2)}</pre>
+            `;
+            
+            document.getElementById('form-usuario').reset();
+        }
+        
+        // GET - API Real (JSONPlaceholder)
+        async function buscarPosts() {
+            const container = document.getElementById('lista-posts');
+            container.innerHTML = '<p class="loading">Carregando da API...</p>';
+            
+            try {
+                const resposta = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=3');
+                const posts = await resposta.json();
+                
+                let html = '';
+                posts.forEach(post => {
+                    html += `
+                        <div class="usuario-item">
+                            <strong>${post.title}</strong><br>
+                            <small>${post.body.substring(0, 100)}...</small>
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+            } catch (erro) {
+                container.innerHTML = `<p style="color: #dc3545;">Erro ao buscar dados: ${erro.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
+```
+
+---
+
+### 📁 **Exemplo Integrado Completo**
+
+Para ver todos os conceitos trabalhando juntos, acesse o exemplo completo da revisão:
+
+**Localização**: [`src/html/revisao/exemplo/`](./exemplo/)
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [index.html](./exemplo/index.html) | Estrutura HTML completa com todos os módulos |
+| [styles.css](./exemplo/styles.css) | CSS com todas as técnicas aprendidas |
+| [script.js](./exemplo/script.js) | JavaScript com DOM e interatividade |
+
+Este exemplo demonstra um **portfólio profissional** que integra:
+- ✅ HTML5 semântico com metadados
+- ✅ CSS3 com variáveis, Flexbox, Grid e animações
+- ✅ JavaScript com manipulação do DOM e eventos
+- ✅ Bootstrap para componentes responsivos
+- ✅ Formulários com validação HTML5
+- ✅ Boas práticas de acessibilidade
 
 ---
 
