@@ -2,6 +2,28 @@ Aqui está um texto detalhado explicando o que são HTML e CSS, suas funções e
 
 ---
 
+# 📚 Curso de Desenvolvimento Web com HTML, CSS e JavaScript
+
+## 🎯 Começando do Zero?
+
+**⚠️ IMPORTANTE**: Se você é iniciante e nunca teve contato com programação ou desenvolvimento web, **comece pela aula de Fundamentos Prévios**!
+
+### 👉 **[00 - Fundamentos Prévios: Preparação Para o Desenvolvimento Web](src/html/00-fundamentos-previos/README.md)**
+
+Nesta aula preparatória, você aprenderá:
+- O que é a Internet e como ela funciona
+- Arquitetura cliente-servidor
+- O que é um navegador e suas ferramentas
+- Conceitos básicos de programação (variáveis, lógica, algoritmos)
+- Diferença entre linguagens de marcação, estilo e programação
+- Como organizar arquivos e pastas
+- Configurar seu ambiente de desenvolvimento
+- Comandos básicos de terminal
+
+**Após completar os fundamentos prévios**, você estará pronto para iniciar as aulas práticas de HTML, CSS e JavaScript!
+
+---
+
 # O Que é HTML e CSS? 
 
 ## Introdução
