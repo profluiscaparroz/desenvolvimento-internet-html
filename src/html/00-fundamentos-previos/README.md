@@ -17,7 +17,7 @@ Antes de mergulharmos no HTML, CSS e JavaScript, é fundamental entender alguns 
 5. [O Que São Linguagens de Programação e Marcação](#5-o-que-são-linguagens-de-programação-e-marcação)
 6. [Sistema de Arquivos e Organização](#6-sistema-de-arquivos-e-organização)
 7. [Editores de Texto e Ambiente de Desenvolvimento](#7-editores-de-texto-e-ambiente-de-desenvolvimento)
-8. [Introdução ao Terminal/Linha de Comando](#8-introdução-ao-terminalLinha-de-comando)
+8. [Introdução ao Terminal/Linha de Comando](#8-introdução-ao-terminal-linha-de-comando)
 9. [Preparando Seu Primeiro Projeto](#9-preparando-seu-primeiro-projeto)
 
 ---
