@@ -84,6 +84,12 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
+        .module-card.fundamentals {
+            --color-primary: #2ecc71;
+            --color-secondary: #27ae60;
+            border-left-color: #2ecc71;
+        }
+
         .module-card.html {
             --color-primary: #e34f26;
             --color-secondary: #f06529;
@@ -275,6 +281,28 @@
         </div>
 
         <div class="modules-grid">
+            <!-- Módulo 0: Fundamentos Prévios -->
+            <div class="module-card fundamentals">
+                <div class="module-header">
+                    <div class="module-icon">🎓</div>
+                    <div>
+                        <h3 class="module-title">00. Fundamentos Prévios</h3>
+                        <p class="module-subtitle">⚠️ Comece Aqui Se É Iniciante!</p>
+                    </div>
+                </div>
+                <p class="module-description">
+                    <strong>Preparação essencial para desenvolvimento web!</strong> Aprenda os conceitos básicos 
+                    necessários antes de iniciar HTML, CSS e JavaScript. Ideal para quem está começando do zero.
+                </p>
+                <ul class="topics-list">
+                    <li><span class="topic-check">✓</span> O que é Internet e Web</li>
+                    <li><span class="topic-check">✓</span> Cliente-Servidor e Navegadores</li>
+                    <li><span class="topic-check">✓</span> Conceitos de programação</li>
+                    <li><span class="topic-check">✓</span> Configurar ambiente de dev</li>
+                </ul>
+                <a href="00-fundamentos-previos/README.md" class="btn">Começar do Zero</a>
+            </div>
+
             <!-- Módulo 1: HTML Básico -->
             <div class="module-card html">
                 <div class="module-header">
