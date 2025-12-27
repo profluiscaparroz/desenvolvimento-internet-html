@@ -754,7 +754,12 @@ Vamos criar a estrutura básica do seu primeiro site!
 
 ```bash
 # Navegue até onde quer criar o projeto
+# Mac / Linux (bash, zsh, etc.):
 cd ~/Documentos
+# Windows (cmd):
+# cd %USERPROFILE%\Documentos
+# Windows (PowerShell):
+# cd $HOME\Documentos
 
 # Crie a pasta do projeto
 mkdir meu-primeiro-site
