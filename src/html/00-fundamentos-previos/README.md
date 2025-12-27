@@ -487,10 +487,10 @@ Relativo ao arquivo atual
 <!-- Arquivo: index.html -->
 
 <!-- Mesma pasta -->
-<link href="style.css">
+<link rel="stylesheet" href="style.css">
 
 <!-- Pasta css -->
-<link href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
 
 <!-- Pasta imagens -->
 <img src="imagens/logo.png">
