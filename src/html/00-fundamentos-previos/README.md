@@ -564,10 +564,10 @@ Um programa especializado para escrever código, com recursos que facilitam a pr
 - Interface minimalista
 - Gratuito (com popup ocasional)
 
-#### **3. Atom**
-- Gratuito e open-source
-- Desenvolvido pelo GitHub
-- Muito customizável
+#### **3. Atom** (descontinuado)
+- O editor Atom foi oficialmente descontinuado pelo GitHub em dezembro de 2022
+- Não recebe mais atualizações nem correções de segurança
+- **Não é recomendado para quem está começando agora** — prefira editores ativos como VS Code ou Sublime Text
 
 #### **4. Notepad++**
 - Só para Windows
