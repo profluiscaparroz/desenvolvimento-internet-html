@@ -685,10 +685,10 @@ Nos últimos anos, ferramentas de IA se tornaram **assistentes valiosos** para q
   - Geração de funções completas
 - **Acesso**: Extensão para VS Code (pago, mas tem período gratuito para estudantes)
 
-#### **3. Google Bard / Gemini**
+#### **3. Google Gemini (antigo Bard)**
 - **O que é**: Assistente conversacional do Google
 - **Como usar**: Similar ao ChatGPT
-- **Acesso**: https://bard.google.com/
+- **Acesso**: https://gemini.google.com/
 
 #### **4. Claude** (Anthropic)
 - **O que é**: Assistente de IA focado em tarefas complexas
@@ -882,12 +882,12 @@ Pense na IA como um **mentor sempre disponível** que:
 
 #### **Gratuitos:**
 - ChatGPT (versão gratuita)
-- Google Bard/Gemini
-- Bing Chat (integrado ao Edge)
+- Google Gemini (antigo Bard)
+- Microsoft Copilot (antigo Bing Chat, no Edge e em https://copilot.microsoft.com)
 
 #### **Para Estudantes:**
 - GitHub Copilot (gratuito para estudantes verificados)
-- GitHub Education Pack (vários benefícios)
+- [GitHub Education Pack](https://education.github.com/pack) (vários benefícios)
 
 #### **Comunidades:**
 - Discord e fóruns onde pode compartilhar dúvidas
