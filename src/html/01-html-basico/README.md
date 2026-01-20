@@ -874,17 +874,19 @@ Esta pasta contém diversos exemplos práticos para você estudar:
 | Arquivo | Conteúdo | Nível |
 |---------|----------|-------|
 | **index.html** | Portal de navegação dos exemplos | 🟢 Básico |
-| **estrutura-basica.html** | Estrutura HTML5 completa e comentada | 🟢 Básico |
-| **texto-formatacao.html** | Tags de texto e formatação | 🟢 Básico |
-| **links-navegacao.html** | Exemplos de links e âncoras | 🟢 Básico |
-| **imagens.html** | Trabalhando com imagens | 🟢 Básico |
-| **listas.html** | Listas ordenadas, não ordenadas e de definição | 🟢 Básico |
-| **tabelas.html** | Estrutura de tabelas | 🟡 Intermediário |
-| **formularios-basicos.html** | Formulários simples | 🟢 Básico |
-| **formularios-avancados.html** | Tipos de input e validação | 🟡 Intermediário |
-| **tags-semanticas.html** | Header, nav, main, footer, etc. | 🟢 Básico |
-| **divisoes-containers.html** | Div e span | 🟢 Básico |
-| **exercicio-completo.html** | Página completa integrando todos conceitos | 🔴 Avançado |
+| **estrutura-basica.html** | Guia completo da estrutura HTML5 com explicações visuais | 🟢 Básico |
+| **pagina1.html** | Estrutura básica e viewport | 🟢 Básico |
+| **pagina2.html** | Formatação de texto (exemplo com História da Linguagem C) | 🟢 Básico |
+| **pagina3.html** | CSS interno e estilização | 🟡 Intermediário |
+| **pagina4.html** | Atributos HTML diversos | 🟢 Básico |
+| **pagina5.html** | Formulários básicos | 🟢 Básico |
+| **pagina6.html** | Tipos de input | 🟡 Intermediário |
+| **pagina7.html** | Links e seus atributos | 🟢 Básico |
+| **pagina8.html** | Imagens e atributos | 🟢 Básico |
+| **pagina9.html** | Listas (ul, ol, li, dl) | 🟢 Básico |
+| **pagina10.html** | Tags semânticas (header, nav, main, footer) | 🟢 Básico |
+| **pagina11.html** | Tabelas (table, tr, td) | 🟡 Intermediário |
+| **pagina12.html** | Divisões (div, span) | 🟢 Básico |
 
 ### 🎓 Como Estudar os Exemplos
 
