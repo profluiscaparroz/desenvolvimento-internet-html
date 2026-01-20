@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exemplo completo de estrutura HTML5 básica com comentários explicativos">
+    <meta name="keywords" content="html, estrutura, html5, tutorial">
+    <meta name="author" content="Curso de Desenvolvimento Web">
+    <title>Estrutura Básica HTML5 - Exemplo Completo</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        
+        .explanation {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .code-block {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        h1 {
+            color: #1976d2;
+            border-bottom: 3px solid #2196f3;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #424242;
+            margin-top: 30px;
+        }
+        
+        .highlight {
+            background-color: #ffeb3b;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Este é um exemplo completo de estrutura HTML5 -->
+    
+    <h1>📄 Estrutura Básica de um Documento HTML5</h1>
+    
+    <div class="explanation">
+        <p><strong>Bem-vindo!</strong> Este documento demonstra a estrutura básica e completa de uma página HTML5. Cada elemento está comentado e explicado para facilitar o aprendizado.</p>
+    </div>
+    
+    <h2>1. DOCTYPE - Declaração do Tipo de Documento</h2>
+    
+    <div class="code-block">
+        &lt;!DOCTYPE html&gt;
+    </div>
+    
+    <div class="explanation">
+        <p>O <span class="highlight">&lt;!DOCTYPE html&gt;</span> é a primeira linha de qualquer documento HTML5. Ele informa ao navegador que esta é uma página HTML5.</p>
+        <ul>
+            <li>✅ Deve ser a primeira linha do documento</li>
+            <li>✅ Não é case-sensitive (pode ser maiúscula ou minúscula)</li>
+            <li>✅ Sem ele, o navegador pode entrar em "quirks mode" (modo de compatibilidade)</li>
+        </ul>
+    </div>
+    
+    <h2>2. Tag &lt;html&gt; - Elemento Raiz</h2>
+    
+    <div class="code-block">
+        &lt;html lang="pt-BR"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+        &lt;/html&gt;
+    </div>
+    
+    <div class="explanation">
+        <p>A tag <span class="highlight">&lt;html&gt;</span> é o elemento raiz que envolve todo o conteúdo da página.</p>
+        <ul>
+            <li><strong>lang="pt-BR":</strong> Define o idioma do documento (português brasileiro)</li>
+            <li>Importante para acessibilidade e SEO</li>
+            <li>Outros códigos comuns: en (inglês), es (espanhol), fr (francês)</li>
+        </ul>
+    </div>
+    
+    <h2>3. Seção &lt;head&gt; - Metadados</h2>
+    
+    <div class="code-block">
+        &lt;head&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Título da Página&lt;/title&gt;<br>
+        &lt;/head&gt;
+    </div>
+    
+    <div class="explanation">
+        <p>O <span class="highlight">&lt;head&gt;</span> contém metadados (informações sobre o documento) que não são exibidos na página.</p>
+        
+        <h3>Meta Tags Essenciais:</h3>
+        <ul>
+            <li><strong>&lt;meta charset="UTF-8"&gt;:</strong> Define a codificação de caracteres (suporta acentos e caracteres especiais)</li>
+            <li><strong>&lt;meta name="viewport"...&gt;:</strong> Torna o site responsivo em dispositivos móveis</li>
+            <li><strong>&lt;meta name="description"...&gt;:</strong> Descrição para mecanismos de busca</li>
+            <li><strong>&lt;meta name="keywords"...&gt;:</strong> Palavras-chave relacionadas ao conteúdo</li>
+            <li><strong>&lt;title&gt;:</strong> Título que aparece na aba do navegador</li>
+        </ul>
+    </div>
+    
+    <h2>4. Seção &lt;body&gt; - Conteúdo Visível</h2>
+    
+    <div class="code-block">
+        &lt;body&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Título Principal&lt;/h1&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Parágrafo de texto...&lt;/p&gt;<br>
+        &lt;/body&gt;
+    </div>
+    
+    <div class="explanation">
+        <p>O <span class="highlight">&lt;body&gt;</span> contém todo o conteúdo visível da página: textos, imagens, vídeos, formulários, etc.</p>
+    </div>
+    
+    <h2>5. Estrutura Semântica HTML5</h2>
+    
+    <div class="code-block">
+        &lt;body&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;header&gt; ... &lt;/header&gt; <em>&lt;!-- Cabeçalho --&gt;</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt; ... &lt;/nav&gt; <em>&lt;!-- Navegação --&gt;</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;main&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt; ... &lt;/section&gt; <em>&lt;!-- Seção --&gt;</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt; ... &lt;/article&gt; <em>&lt;!-- Artigo --&gt;</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/main&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;aside&gt; ... &lt;/aside&gt; <em>&lt;!-- Conteúdo lateral --&gt;</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;footer&gt; ... &lt;/footer&gt; <em>&lt;!-- Rodapé --&gt;</em><br>
+        &lt;/body&gt;
+    </div>
+    
+    <div class="explanation">
+        <p>HTML5 introduziu <strong>tags semânticas</strong> que dão significado ao conteúdo:</p>
+        <ul>
+            <li><strong>&lt;header&gt;:</strong> Cabeçalho da página ou seção</li>
+            <li><strong>&lt;nav&gt;:</strong> Menu de navegação</li>
+            <li><strong>&lt;main&gt;:</strong> Conteúdo principal (apenas 1 por página)</li>
+            <li><strong>&lt;section&gt;:</strong> Seção temática do conteúdo</li>
+            <li><strong>&lt;article&gt;:</strong> Conteúdo independente e reutilizável</li>
+            <li><strong>&lt;aside&gt;:</strong> Conteúdo relacionado (sidebar)</li>
+            <li><strong>&lt;footer&gt;:</strong> Rodapé da página ou seção</li>
+        </ul>
+    </div>
+    
+    <h2>6. Exemplo Completo Mínimo</h2>
+    
+    <div class="code-block">
+        &lt;!DOCTYPE html&gt;<br>
+        &lt;html lang="pt-BR"&gt;<br>
+        &lt;head&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Minha Página&lt;/title&gt;<br>
+        &lt;/head&gt;<br>
+        &lt;body&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Olá, Mundo!&lt;/h1&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Esta é minha primeira página HTML5.&lt;/p&gt;<br>
+        &lt;/body&gt;<br>
+        &lt;/html&gt;
+    </div>
+    
+    <div class="explanation">
+        <p><strong>💡 Dica:</strong> Este é o mínimo necessário para uma página HTML5 válida. Use-o como template base para seus projetos!</p>
+    </div>
+    
+    <h2>7. Boas Práticas</h2>
+    
+    <div class="explanation">
+        <h3>✅ Faça:</h3>
+        <ul>
+            <li>Sempre inclua o DOCTYPE</li>
+            <li>Use o atributo lang na tag &lt;html&gt;</li>
+            <li>Sempre defina charset e viewport no &lt;head&gt;</li>
+            <li>Use indentação consistente (2 ou 4 espaços)</li>
+            <li>Feche todas as tags</li>
+            <li>Use tags semânticas quando apropriado</li>
+            <li>Adicione comentários explicativos</li>
+        </ul>
+        
+        <h3>❌ Evite:</h3>
+        <ul>
+            <li>Esquecer o DOCTYPE</li>
+            <li>Não definir o charset (pode gerar problemas com acentos)</li>
+            <li>Usar apenas &lt;div&gt; quando existe tag semântica apropriada</li>
+            <li>Deixar tags abertas sem fechar</li>
+            <li>Escrever HTML sem indentação</li>
+        </ul>
+    </div>
+    
+    <h2>8. Recursos Adicionais</h2>
+    
+    <div class="explanation">
+        <ul>
+            <li>📚 <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">MDN Web Docs - HTML</a></li>
+            <li>📚 <a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML Tutorial</a></li>
+            <li>🔍 <a href="https://validator.w3.org/" target="_blank">W3C Validator</a> - Valide seu HTML</li>
+        </ul>
+    </div>
+    
+    <footer style="margin-top: 40px; padding: 20px; background-color: #e0e0e0; border-radius: 4px; text-align: center;">
+        <p><strong>📖 Lição Completa!</strong> Agora você conhece a estrutura básica de um documento HTML5.</p>
+        <p><a href="index.html" style="color: #1976d2; text-decoration: none; font-weight: bold;">← Voltar ao Índice</a></p>
+    </footer>
+</body>
+</html>
