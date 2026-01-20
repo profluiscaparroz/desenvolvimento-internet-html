@@ -265,7 +265,7 @@ Esta linha tem uma quebra de linha manual.</p>
 <p>Texto <mark>destacado em amarelo</mark></p>
 <p>Texto <small>menor</small></p>
 <p>Texto <del>riscado (deletado)</del></p>
-<p>Texto <ins>sublinhado (inserido)</ins></p>
+<p>Texto <ins>inserido (adicionado ao documento)</ins></p>
 <p>Texto <sub>subscrito</sub> e <sup>sobrescrito</sup></p>
 
 <!-- CÓDIGO E TÉCNICO -->
@@ -311,7 +311,7 @@ Esta linha tem uma quebra de linha manual.</p>
 <a href="tel:+5511999999999">Ligar Agora</a>
 
 <!-- Link que abre em nova aba -->
-<a href="https://www.google.com" target="_blank">Abrir em Nova Aba</a>
+<a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Abrir em Nova Aba</a>
 
 <!-- Link para download -->
 <a href="documento.pdf" download>Baixar PDF</a>
@@ -993,4 +993,4 @@ Marque conforme for dominando cada tópico:
 
 ---
 
-*Última atualização: 2024*
+*Última atualização: 2026*
