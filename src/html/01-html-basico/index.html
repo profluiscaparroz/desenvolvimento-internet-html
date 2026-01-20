@@ -7,43 +7,222 @@
     <meta charset="UTF-8">
     <!-- Define a codificação de caracteres como UTF-8 para suporte a acentos e caracteres especiais -->
     
-    <!-- Meta tag de viewport comentada - a versão ativa é uma alternativa mais restritiva -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Controla como a página é exibida em dispositivos móveis -->
     <!-- width=device-width: define largura como a do dispositivo -->
-    <!-- maximum-scale=1.0: impede que usuário dê zoom além de 100% -->
+    <!-- initial-scale=1.0: zoom inicial de 100% -->
 
-    <title>HTML Básico - Estruturas e Elementos</title>
+    <title>HTML Básico - Portal de Exemplos Práticos</title>
     <!-- Título que aparece na aba do navegador -->
+    
+    <style>
+        /* Estilos básicos para melhorar a apresentação */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        
+        .intro {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+        
+        .example-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .example-list li {
+            background-color: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .example-list li:hover {
+            background-color: #e8f4f8;
+            transform: translateX(5px);
+        }
+        
+        .example-list a {
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .example-list a:hover {
+            color: #3498db;
+        }
+        
+        .description {
+            color: #7f8c8d;
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+        
+        .level {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.85em;
+            margin-left: 10px;
+        }
+        
+        .nivel-basico {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        .nivel-intermediario {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .category-header {
+            background-color: #34495e;
+            color: white;
+            padding: 10px;
+            margin-top: 25px;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
     <!-- Corpo do documento - conteúdo visível ao usuário -->
     
-    <h1>HTML Básico - Estruturas e Elementos</h1>
+    <h1>📚 HTML Básico - Portal de Exemplos Práticos</h1>
     <!-- Cabeçalho principal da página (h1 = heading 1, o mais importante) -->
     
-    <p>Explore os elementos fundamentais do HTML através dos exemplos abaixo. Cada página demonstra conceitos essenciais com exemplos práticos e bem comentados.</p>
+    <div class="intro">
+        <p><strong>Bem-vindo ao módulo de HTML Básico!</strong></p>
+        <p>Explore os elementos fundamentais do HTML através dos exemplos organizados abaixo. Cada página demonstra conceitos essenciais com exemplos práticos e código bem comentado.</p>
+        <p>💡 <strong>Dica:</strong> Abra o código-fonte de cada exemplo (botão direito → "Ver código-fonte da página") para entender como funciona!</p>
+    </div>
     
-    <ul>
-        <!-- Lista não ordenada (unordered list) - cria uma lista com marcadores -->
-        <li><a href="pagina1.html">Introdução ao HTML</a></li>
-        <!-- Item da lista (list item) contendo um link (anchor) -->
-        <!-- href = hypertext reference, define o destino do link -->
+    <h2 class="category-header">🏗️ Estrutura e Fundamentos</h2>
+    <ul class="example-list">
+        <li>
+            <a href="estrutura-basica.html">🆕 00 - Guia Completo da Estrutura HTML5</a>
+            <span class="level nivel-basico">Básico</span>
+            <p class="description">Guia detalhado e didático sobre a estrutura completa HTML5: DOCTYPE, html, head, body, meta tags com explicações visuais e exemplos práticos.</p>
+        </li>
         
-        <li><a href="pagina2.html">Linguagem C - História</a></li>
-        <li><a href="pagina3.html">HTML com CSS Interno</a></li>
-        <li><a href="pagina4.html">Atributos HTML</a></li>
-        <li><a href="pagina5.html">Formulários</a></li>
-        <li><a href="pagina6.html">Tipos de Input</a></li>
-        <li><a href="pagina7.html">Links e Atributos</a></li>
-        <li><a href="pagina8.html">Imagens e Atributos</a></li>
+        <li>
+            <a href="pagina1.html">01 - Estrutura Básica HTML5</a>
+            <span class="level nivel-basico">Básico</span>
+            <p class="description">Aprenda a estrutura completa de um documento HTML5: DOCTYPE, html, head, body e meta tags essenciais para responsividade.</p>
+        </li>
         
-        <!-- Novos tópicos sobre estruturas HTML -->
-        <li><a href="pagina9.html">📝 Listas (ul, ol, li)</a></li>
-        <li><a href="pagina10.html">🧭 Navegação (nav)</a></li>
-        <li><a href="pagina11.html">📊 Tabelas (table, tr, td)</a></li>
-        <li><a href="pagina12.html">📦 Div (Divisões)</a></li>
+        <li>
+            <a href="pagina4.html">02 - Atributos HTML</a>
+            <span class="level nivel-basico">Básico</span>
+            <p class="description">Explore os atributos HTML mais comuns: id, class, style, title e como usá-los corretamente em seus elementos.</p>
+        </li>
+        
+        <li>
+            <a href="pagina10.html">03 - Tags Semânticas (header, nav, main, footer)</a>
+            <span class="level nivel-basico">Básico</span>
+            <p class="description">Entenda a importância das tags semânticas do HTML5 e como estruturar páginas de forma acessível e otimizada para SEO.</p>
+        </li>
+        
+        <li>
+            <a href="pagina12.html">04 - Divisões e Containers (div, span)</a>
+            <span class="level nivel-basico">Básico</span>
+            <p class="description">Aprenda a usar div e span para agrupar e organizar elementos, diferenciando containers de bloco e inline.</p>
+        </li>
     </ul>
+    
+    <h2 class="category-header">✍️ Texto e Formatação</h2>
+    <ul class="example-list">
+        <li>
+            <a href="pagina2.html">05 - Formatação de Texto Completa</a>
+            <span class="level nivel-basico">Básico</span>
+            <p class="description">Exemplo prático com títulos (h1-h6), parágrafos, ênfase, negrito, itálico, marcações e muito mais. Inclui história da Linguagem C como conteúdo de exemplo.</p>
+        </li>
+        
+        <li>
+            <a href="pagina3.html">06 - Estilização com CSS Interno</a>
+            <span class="level nivel-intermediario">Intermediário</span>
+            <p class="description">Veja como aplicar CSS interno (inline e na tag style) para estilizar elementos HTML e criar páginas visualmente atraentes.</p>
+        </li>
+    </ul>
+    
+    <h2 class="category-header">🔗 Links e Navegação</h2>
+    <ul class="example-list">
+        <li>
+            <a href="pagina7.html">07 - Links e Seus Atributos</a>
+            <span class="level nivel-basico">Básico</span>
+            <p class="description">Domine a tag &lt;a&gt; e seus atributos: href, target, title, download. Aprenda sobre links externos, internos, âncoras e caminhos relativos/absolutos.</p>
+        </li>
+    </ul>
+    
+    <h2 class="category-header">🖼️ Imagens e Mídia</h2>
+    <ul class="example-list">
+        <li>
+            <a href="pagina8.html">08 - Imagens e Atributos</a>
+            <span class="level nivel-basico">Básico</span>
+            <p class="description">Trabalhe com a tag &lt;img&gt;, atributos src e alt, dimensionamento, formatos de imagem e boas práticas de acessibilidade.</p>
+        </li>
+    </ul>
+    
+    <h2 class="category-header">📋 Listas e Organização</h2>
+    <ul class="example-list">
+        <li>
+            <a href="pagina9.html">09 - Listas (ul, ol, dl)</a>
+            <span class="level nivel-basico">Básico</span>
+            <p class="description">Exemplo completo de listas não ordenadas, ordenadas e de definição. Inclui listas aninhadas e casos de uso práticos.</p>
+        </li>
+    </ul>
+    
+    <h2 class="category-header">📊 Tabelas</h2>
+    <ul class="example-list">
+        <li>
+            <a href="pagina11.html">10 - Tabelas (table, thead, tbody, tr, td, th)</a>
+            <span class="level nivel-intermediario">Intermediário</span>
+            <p class="description">Crie tabelas estruturadas com cabeçalho, corpo e rodapé. Aprenda sobre mesclagem de células (colspan, rowspan) e tabelas acessíveis.</p>
+        </li>
+    </ul>
+    
+    <h2 class="category-header">📝 Formulários</h2>
+    <ul class="example-list">
+        <li>
+            <a href="pagina5.html">11 - Formulários Básicos</a>
+            <span class="level nivel-basico">Básico</span>
+            <p class="description">Introdução aos formulários: tag &lt;form&gt;, inputs básicos (text, email, password), labels e botões de envio.</p>
+        </li>
+        
+        <li>
+            <a href="pagina6.html">12 - Tipos de Input e Validação</a>
+            <span class="level nivel-intermediario">Intermediário</span>
+            <p class="description">Explore todos os tipos de input HTML5: text, email, number, date, color, range, file e muito mais. Aprenda sobre validação de formulários.</p>
+        </li>
+    </ul>
+    
+    <footer style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #bdc3c7; text-align: center; color: #7f8c8d;">
+        <p><strong>📖 Dica de Estudo:</strong> Siga a ordem sugerida para melhor compreensão dos conceitos!</p>
+        <p>🚀 Após completar estes exemplos, prossiga para o módulo <strong>02-html-estrutura-semantica</strong></p>
+        <p style="margin-top: 15px;">© 2026 - Curso de Desenvolvimento Web | HTML Básico</p>
+    </footer>
 </body>
 </html>
