@@ -320,7 +320,7 @@ Use `@keyframes` para criar animações personalizadas:
 
 | Arquivo | Conteúdo | Nível |
 |---------|----------|-------|
-| **index.html** | Portal de navegação do módulo | 🟢 Básico |
+| **index.html** | Página explicativa sobre a tag `<div>` | 🟢 Básico |
 | **exemplo0.html** | DIV básica com CSS simples | 🟢 Básico |
 | **exemplo1.html** | Layouts modernos (Flexbox, Grid, posicionamento) | 🟡 Intermediário |
 | **exemplo2.html** | Animações com `@keyframes` e `transition` | 🟡 Intermediário |
