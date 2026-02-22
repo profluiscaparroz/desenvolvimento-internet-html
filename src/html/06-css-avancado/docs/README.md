@@ -42,7 +42,7 @@ Este módulo aprofunda os conhecimentos de CSS com **técnicas avançadas de lay
 ├── exemplo-nav-sub.html    ← Navegação com submenus
 ├── exemplo-nav-json.html   ← Navegação gerada dinamicamente
 ├── exercicio.html          ← Exercício prático
-├── index.html              ← Página principal do módulo
+├── index.html              ← Página explicativa sobre a tag <div>
 └── exemplo/                ← Projeto completo de portfólio (referência)
     ├── index.html
     ├── login.html
