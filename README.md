@@ -1,7 +1,3 @@
-Aqui está um texto detalhado explicando o que são HTML e CSS, suas funções e sua importância no desenvolvimento web.
-
----
-
 # 📚 Curso de Desenvolvimento Web com HTML, CSS e JavaScript
 
 ## 🎯 Começando do Zero?
